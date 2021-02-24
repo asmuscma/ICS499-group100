@@ -2,7 +2,7 @@
 
 Our project is a web service where people can participate in political surveys and discussion.
 
-## Features or Example
+## Features
 
 + Vote for a candidate (National or State Government).
 + Take a survey based on different poltical issues.
