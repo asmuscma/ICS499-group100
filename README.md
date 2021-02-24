@@ -11,15 +11,15 @@ Our project is a web service where people can participate in political surveys a
 
 ## Dependencies
 
-+ [Maven] (https://maven.apache.org/)
-+ [PostgreSQL] (https://www.postgresql.org/)
++ [Maven](https://maven.apache.org/)
++ [PostgreSQL](https://www.postgresql.org/)
 + [Spring](https://spring.io/)
 + Others
 
 ## Contributors
 
-+ [Colin Asmus] (https://github.com/asmuscma)
-+ [Rashid Olad]
-+ [Warsame Guled] (https://github.com/GoodnewsSama)
-+ [Xang Lee] (https://github.com/xangleee)
-+ [Zion Tran] (https://github.com/PopcornTheBearCat)
++ [Colin Asmus](https://github.com/asmuscma)
++ Rashid Olad
++ [Warsame Guled](https://github.com/GoodnewsSama)
++ [Xang Lee](https://github.com/xangleee)
++ [Zion Tran](https://github.com/PopcornTheBearCat)
