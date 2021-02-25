@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Survey")
+@Table(name = "SURVEY")
 public class Survey extends Poll {
 	@Column(name = "ISSUE")
 	private Issue issue;

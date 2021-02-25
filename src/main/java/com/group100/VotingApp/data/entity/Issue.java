@@ -11,9 +11,11 @@ import java.util.ArrayList;
  * candidates, and parties will have different opinions on.
  */
 @Entity
-@Table(name="Issue")
+@Table(name="ISSUE")
 public class Issue {
-	@Column(name="topic")
+	@Column(name="ISSUE_ID")
+	long issueId;
+	@Column(name="TOPIC")
 	String topic;
 	List<String> opinions = new ArrayList<String>();
 	public Issue(String topic, List<String> opinions) {

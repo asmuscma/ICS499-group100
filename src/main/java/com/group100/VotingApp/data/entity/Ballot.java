@@ -6,7 +6,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Ballot")
+@Table(name = "BALLOT")
 public class Ballot extends Poll {
 	@Id
 	@Column(name = "USER_ID")
