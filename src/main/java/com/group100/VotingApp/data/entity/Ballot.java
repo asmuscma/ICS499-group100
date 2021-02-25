@@ -2,7 +2,7 @@ package com.group100.VotingApp.data.entity;
 
 public class Ballot {
 	private int userID;
-	private int candidateID;
+	private Race;
 	private String Office;
 	public Ballot(int userID, int candidateID, String office) {
 		super();
