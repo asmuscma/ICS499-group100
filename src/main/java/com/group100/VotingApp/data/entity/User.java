@@ -1,9 +1,16 @@
 package com.group100.VotingApp.data.entity;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="User")
 public class User extends Person {
-	
+	@Column(name="address")
 	Address address;
+	@Column(name="username")
 	String username;
+	@Column(name="password")
 	String password;
 
 	public User(String fName, String lName, Address address, String username, String password) {

@@ -1,8 +1,17 @@
 package com.group100.VotingApp.data.entity;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="Ballot")
 public class Ballot {
+	@Id
+	@Column(name="userID")
 	private int userID;
-	private Race;
+	@Column(name="Race")
+	private race Race;
+	@Column(name="office")
 	private String Office;
 	public Ballot(int userID, int candidateID, String office) {
 		super();

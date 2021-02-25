@@ -1,8 +1,15 @@
 package com.group100.VotingApp.data.entity;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+@Entity
+@Table(name="Survey")
 public class Survey {
+	@Column(name="question")
 	private String question;
+	@Column(name="answer")
 	private String answer;
+	@Column(name="topic")
 	private String topic;
 
 	public Survey(String question, String answer, String topic) {
