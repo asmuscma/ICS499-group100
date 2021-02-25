@@ -1,10 +1,21 @@
 package com.group100.VotingApp.data.entity;
-
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name="Address")
 public class Address {
-	
+	@Id
+	@Column(name="street")
 	private String street;
+	@Column(name="city")
 	private String city;
+	@Column(name="state")
 	private String state;
+	@Column(name="zipcode")
 	private String zipcode;
 	
 	public Address(String street, String city, String state, String zipcode) {
