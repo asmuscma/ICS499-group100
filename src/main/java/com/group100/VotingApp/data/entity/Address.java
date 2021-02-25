@@ -1,4 +1,4 @@
-package com.group100.VotingApp;
+package com.group100.VotingApp.data.entity;
 
 public class Address {
 	
