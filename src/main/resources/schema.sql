@@ -1,27 +1,31 @@
+CREATE TABLE USER(
+  USER_ID AUTO_INCREMENT PRIMARY KEY,
+  FNAME VARCHAR(24), 
+  LNAME VARCHAR(24), 
+  ADDRESS VARCHAR(64),
+  STATE VARCHAR(12),
+  DOB DATE, 
+  SSN VARCHAR(12), 
+  PHONENUM VARCHAR(24)
+);
 
-Create Table personalInfo(fName varchar(25) NOT NULL, lName varchar(25) NOT NULL, 
-address varchar(60) NOT NULL, DOB date NOT NULL, SSN int NOT NULL, phoneNum int NOT NULL);
+CREATE TABLE CANDIDATE(
+  CANDIDATE_ID AUTO_INCREMENT PRIMARY KEY,
+  FNAME VARCHAR(24), 
+  LNAME VARCHAR(24), 
+  PARTY VARCHAR(24), 
+  OFFICE VARCHAR(32)
+);
 
-CREATE TABLE USER(username varchar(15) NOT NULL, 
-password varchar(25), SSN int NOT NULL);
+CREATE TABLE BALLOT(
+  BALLOT_ID BIGINT AUTO_INCREMENT PRIMARY KEY,
+  USER_ID BIGINT NOT NULL,
+  CANDIDATE_ID BIGINT NOT NULL,
+  OFFICE VARCHAR(32) NOT NULL
+);
 
-create Table Address(Street varchar(60) NOT NULL,
-Street2 varchar(60), 
-city varchar(40) NOT NULL,
-zipCode int NULL, county varchar(10) NOT NULL,
-district int NOT NULL); 
-
-create Table Survey(question varchar(100) NOT NULL, 
-answer varchar(45) NOT NULL,
-topic varchar(35) NOT NULL);
-
-Create Table Ballot(raceID int NOT NULL, office varchar(25) NOT NULL, 
-count int NOT NULL, date Date NOT NULL, Candidate varchar(25) NOT NULL);
-
-Create Table Candidate(candidateFirstName varchar(30), 
-candidateLastName varchar(30), district int NOT Null, party varchar(25) NOT NULL, 
-office varchar(25) NOT NULL, candidateID int NOT NUll);
-
-
-
-  
+CREATE TABLE SURVEY(
+  QUESTION VARCHAR(100), 
+  ANSWER VARCHAR(45),
+  TOPIC VARCHAR(35)
+);
