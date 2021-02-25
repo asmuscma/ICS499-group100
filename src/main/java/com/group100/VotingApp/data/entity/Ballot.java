@@ -7,44 +7,44 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "Ballot")
-public class Ballot {
+public class Ballot extends Poll {
 	@Id
-	@Column(name = "userID")
-	private int userID;
-	@Column(name = "Race")
-	private Race race;
-	@Column(name = "office")
-	private String Office;
+	@Column(name = "USER_ID")
+	private long userId;
+	@Id
+	@Column(name = "CANDIDATE_ID")
+	private long candidateId;
+	@Column(name = "OFFICE")
+	private String office;
 
-	public Ballot(int userID, int candidateID, String office, Race race) {
-		super();
-		this.userID = userID;
-		this.race = race;
-		Office = office;
+	public Ballot(String question, String answer, long userId, long candidateId, String office) {
+		super(question, answer);
+		this.userId = userId;
+		this.candidateId = candidateId;
+		this.office = office;
 	}
 
-	public int getUserID() {
-		return userID;
+	public long getUserId() {
+		return userId;
 	}
 
-	public void setUserID(int userID) {
-		this.userID = userID;
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
-	public Race getRace() {
-		return race;
+	public long getCandidateId() {
+		return candidateId;
 	}
 
-	public void setRace(Race race) {
-		this.race = race;
+	public void setCandidateId(int candidateId) {
+		this.candidateId = candidateId;
 	}
 
 	public String getOffice() {
-		return Office;
+		return office;
 	}
 
 	public void setOffice(String office) {
-		Office = office;
+		this.office = office;
 	}
-
 }
