@@ -2,14 +2,12 @@ package com.group100.VotingApp.data.entity;
 
 public abstract class Person {
 	
-	public Person(String fName, String lName, long personId) {
+	public Person(String fName, String lName) {
 		this.fName = fName;
 		this.lName = lName;
-		this.personId = personId;
 	}
 	
 	String fName;
 	String lName;
-	long personId;
 	
 }
