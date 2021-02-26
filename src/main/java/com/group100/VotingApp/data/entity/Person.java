@@ -1,7 +1,15 @@
 package com.group100.VotingApp.data.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public abstract class Person {
+	@Id
+	@Column(name = "fName")
 	private String fName;
+	@Column(name = "lName")
 	private String lName;
 
 	public Person(String fName, String lName) {
