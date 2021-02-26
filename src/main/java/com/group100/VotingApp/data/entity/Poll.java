@@ -1,12 +1,17 @@
 package com.group100.VotingApp.data.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
 /**
  * A poll is an abstract superclass for Survey and Ballot. The two fields that
  * this contains is question and answer
  */
+@Entity
 public abstract class Poll {
-
+	@Column(name="question")
 	String question;
+	@Column(name="answer")
 	String answer;
 
 	public Poll(String question, String answer) {

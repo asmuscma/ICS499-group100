@@ -8,7 +8,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="Address")
 public class Address {
-	@Id
 	@Column(name="street")
 	private String street;
 	@Column(name="city")

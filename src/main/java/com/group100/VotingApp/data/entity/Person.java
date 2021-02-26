@@ -6,7 +6,6 @@ import javax.persistence.Id;
 
 @Entity
 public abstract class Person {
-	@Id
 	@Column(name = "fName")
 	private String fName;
 	@Column(name = "lName")
