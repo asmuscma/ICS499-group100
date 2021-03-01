@@ -1,31 +1,18 @@
 package com.group100.VotingApp.data.entity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="User")
+@Table(name = "USER")
 public class User extends Person {
-	@Id 
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column
-	private long userId;
-	@Column(name="ADDRESS")
-	Address address;
-	@Column(name="USERNAME")
-	String username;
-	@Column(name="PASSWORD")
-	String password;
-
-	public User(String fName, String lName, Address address, String username, String password) {
-		super(fName, lName);
-		this.address = address;
-		this.username = username;
-		this.password = password;
-	}
+	@Column(name = "ADDRESS")
+	private Address address;
+	@Column(name = "USERNAME")
+	private String username;
+	@Column(name = "PASSWORD")
+	private String password;
 
 	public Address getAddress() {
 		return address;

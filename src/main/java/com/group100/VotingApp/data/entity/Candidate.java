@@ -1,36 +1,16 @@
 package com.group100.VotingApp.data.entity;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.Table;
+
 @Entity
-@Table(name="Candidate")
+@Table(name = "CANDIDATE")
 public class Candidate extends Person {
-	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="CANDIDATE_ID")
-	private int candidateID;
-	@Column(name="PARTY")
+	@Column(name = "PARTY")
 	private String party;
-	@Column(name="OFFICE")
+	@Column(name = "OFFICE")
 	private String office;
-
-	public Candidate(int candidateID, String fName, String lName, String party, String office) {
-		super(fName, lName);
-		this.candidateID = candidateID;
-		this.party = party;
-		this.office = office;
-	}
-
-	public int getCandidateID() {
-		return candidateID;
-	}
-
-	public void setCandidateID(int candidateID) {
-		this.candidateID = candidateID;
-	}
 
 	public String getParty() {
 		return party;
