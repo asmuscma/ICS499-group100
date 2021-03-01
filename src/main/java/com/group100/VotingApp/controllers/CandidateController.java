@@ -5,31 +5,35 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.group100.VotingApp.data.entity.User;
-import com.group100.VotingApp.data.repository.UserRepository;
+import com.group100.VotingApp.data.entity.Candidate;
+
+import com.group100.VotingApp.data.repository.CandidateRepository;
+
 
 @RestController
-@RequestMapping("/User")
-public class UserController {
+@RequestMapping("/candidate")
+public class CandidateController {
 
 	@Autowired 
-	private UserRepository userRepo;
+	private CandidateRepository candidateRepo;
 	
 	@GetMapping("/all")
-	public List<User> list(){
-		return userRepo.findAll();
+	public List<Candidate> list(){
+		return candidateRepo.findAll();
 	}
-	public User get(@PathVariable Long id) {
-		return userRepo.getOne(id);
+	
+	public Candidate get(@PathVariable Long id) {
+		return candidateRepo.getOne(id);
 	}
 	
 	@PostMapping
-	public User create(@RequestBody final User user) {
-		return userRepo.saveAndFlush(user);
+	public Candidate create(@RequestBody final Candidate candidate) {
+		return candidateRepo.saveAndFlush(candidate);
 		}
 }
