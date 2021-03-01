@@ -5,32 +5,35 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.group100.VotingApp.data.entity.User;
-import com.group100.VotingApp.data.repository.UserRepository;
+import com.group100.VotingApp.data.entity.Survey;
+
+import com.group100.VotingApp.data.repository.SurveyRepository;
+
 
 @RestController
-@RequestMapping("/User")
-public class UserController {
+@RequestMapping("/survey")
+public class SurveyController {
 
 	@Autowired 
-	private UserRepository userRepo;
+	private SurveyRepository SurveyRepo;
 	
 	@GetMapping("/all")
-	public List<User> list(){
-		return userRepo.findAll();
+	public List<Survey> list(){
+		return SurveyRepo.findAll();
 	}
-	public User get(@PathVariable Long id) {
-		return userRepo.getOne(id);
+	
+	public Survey get(@PathVariable Long id) {
+		return SurveyRepo.getOne(id);
 	}
 	
 	@PostMapping
-	public User create(@RequestBody final User user) {
-		return userRepo.saveAndFlush(user);
+	public Survey create(@RequestBody final Survey survey) {
+		return SurveyRepo.saveAndFlush(survey);
 		}
 }
