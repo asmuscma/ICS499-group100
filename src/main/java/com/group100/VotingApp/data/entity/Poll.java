@@ -2,6 +2,9 @@ package com.group100.VotingApp.data.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * A poll is an abstract superclass for Survey and Ballot. The two fields that
@@ -9,6 +12,8 @@ import javax.persistence.Entity;
  */
 @Entity
 public abstract class Poll {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="question")
 	String question;
 	@Column(name="answer")
