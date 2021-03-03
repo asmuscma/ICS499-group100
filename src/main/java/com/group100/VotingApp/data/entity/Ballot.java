@@ -10,16 +10,15 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "BALLOT")
 public class Ballot extends Poll {
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "USER_ID")
 	private long userId;
-	@Id
 	@Column(name = "CANDIDATE_ID")
 	private long candidateId;
 	@Column(name = "OFFICE")
 	private String office;
-
+	public Ballot() {
+		
+	}
 	public Ballot(String question, String answer, long userId, long candidateId, String office) {
 		super(question, answer);
 		this.userId = userId;

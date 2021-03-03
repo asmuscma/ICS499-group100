@@ -9,5 +9,6 @@
 	    <class>com.group100.VotingApp.data.entity.Race</class>
 	    <class>com.group100.VotingApp.data.entity.Survey</class>
 	    <class>com.group100.VotingApp.data.entity.User</class>
+	    <class>com.group100.VotingApp.data.entity.Issue</class>
 	</persistence-unit>
 </persistence>

@@ -15,7 +15,9 @@ public class Race {
 	private int count;
 	@Column(name = "OFFICE")
 	private String office;
-
+	public Race() {
+		
+	}
 	public Race(int raceID, int count, String office) {
 		this.raceID = raceID;
 		this.count = count;

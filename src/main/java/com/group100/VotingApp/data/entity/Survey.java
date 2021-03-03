@@ -9,7 +9,9 @@ import javax.persistence.Table;
 public class Survey extends Poll {
 	@Column(name = "ISSUE")
 	private Issue issue;
-
+	public Survey(){
+		
+	}
 	public Survey(String question, String answer, Issue issue) {
 		super(question, answer);
 		this.issue = issue;

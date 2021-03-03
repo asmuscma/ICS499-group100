@@ -23,7 +23,9 @@ public class Issue {
 	@Column(name = "TOPIC")
 	String topic;
 	List<String> opinions = new ArrayList<String>();
-
+	public Issue() {
+		
+	}
 	public Issue(String topic, List<String> opinions) {
 		this.topic = topic;
 		this.opinions = opinions;

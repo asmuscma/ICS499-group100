@@ -12,13 +12,17 @@ import javax.persistence.Id;
  */
 @Entity
 public abstract class Poll {
+
+
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name="question")
 	String question;
 	@Column(name="answer")
 	String answer;
-
+	public Poll() {
+		
+	}
 	public Poll(String question, String answer) {
 		super();
 		this.question = question;

@@ -5,9 +5,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+
+
 @Entity
 @Table(name="Address")
 public class Address {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name="street")
 	private String street;
 	@Column(name="city")
@@ -16,7 +21,9 @@ public class Address {
 	private String state;
 	@Column(name="zipcode")
 	private String zipcode;
-	
+	public Address() {
+		
+	}
 	public Address(String street, String city, String state, String zipcode) {
 		super();
 		this.street = street;
