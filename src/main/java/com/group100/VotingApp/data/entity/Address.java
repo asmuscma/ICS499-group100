@@ -1,4 +1,6 @@
 package com.group100.VotingApp.data.entity;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,29 +10,27 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
-
-
 @Entity
-@Table(name="ADDRESS")
+@Table(name = "ADDRESS")
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ADDRESS_ID")
 	private long addressId;
-	@OneToOne
+	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "USER_ID")
-	private long userId;
-	@Column(name="STREET")
+	private User user;
+	@Column(name = "STREET")
 	private String street;
-	@Column(name="CITY")
+	@Column(name = "CITY")
 	private String city;
-	@Column(name="STATE")
+	@Column(name = "STATE")
 	private String state;
-	@Column(name="ZIPCODE")
+	@Column(name = "ZIPCODE")
 	private String zipcode;
-	
+
 	public Address() {
-		
+
 	}
 
 	public String getStreet() {

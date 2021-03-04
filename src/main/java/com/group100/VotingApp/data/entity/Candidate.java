@@ -11,6 +11,10 @@ public class Candidate extends Person {
 	private String party;
 	@Column(name = "OFFICE")
 	private String office;
+	
+	public Candidate() {
+		
+	}
 
 	public String getParty() {
 		return party;

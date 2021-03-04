@@ -17,6 +17,10 @@ public abstract class Person {
 	private String fName;
 	@Column(name = "LNAME")
 	private String lName;
+	
+	public Person() {
+		
+	}
 
 	public long getPersonId() {
 		return personId;

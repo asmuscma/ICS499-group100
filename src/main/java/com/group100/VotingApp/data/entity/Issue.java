@@ -1,10 +1,12 @@
 package com.group100.VotingApp.data.entity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.util.List;
 import java.util.ArrayList;
@@ -19,16 +21,20 @@ public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "ISSUE_ID")
-	long issueId;
+	private long issueId;
 	@Column(name = "TOPIC")
-	String topic;
-	List<String> opinions = new ArrayList<String>();
+	private String topic;
+	@OneToOne(cascade = CascadeType.ALL)
+	private Survey survey;
+	// private List<String> opinions = new ArrayList<String>();
+
 	public Issue() {
-		
+
 	}
+
 	public Issue(String topic, List<String> opinions) {
 		this.topic = topic;
-		this.opinions = opinions;
+		//this.opinions = opinions;
 	}
 
 	public String getTopic() {
@@ -39,11 +45,11 @@ public class Issue {
 		this.topic = topic;
 	}
 
-	public List<String> getOpinions() {
+	/*public List<String> getOpinions() {
 		return opinions;
 	}
 
 	public void setOpinions(List<String> opinions) {
 		this.opinions = opinions;
-	}
+	}*/
 }

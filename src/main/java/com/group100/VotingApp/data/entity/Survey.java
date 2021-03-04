@@ -1,17 +1,19 @@
 package com.group100.VotingApp.data.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "SURVEY")
 public class Survey extends Poll {
-	@Column(name = "ISSUE")
+	@OneToOne(mappedBy = "survey")
 	private Issue issue;
-	public Survey(){
-		
+
+	public Survey() {
+
 	}
+
 	public Survey(String question, String answer, Issue issue) {
 		super(question, answer);
 		this.issue = issue;

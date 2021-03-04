@@ -3,16 +3,21 @@ package com.group100.VotingApp.data.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import javax.persistence.OneToOne;
 
 @Entity
 @Table(name = "USER")
 public class User extends Person {
-	@Column(name = "ADDRESS")
+	@OneToOne(mappedBy = "user")
 	private Address address;
 	@Column(name = "USERNAME")
 	private String username;
 	@Column(name = "PASSWORD")
 	private String password;
+
+	public User() {
+
+	}
 
 	public Address getAddress() {
 		return address;
