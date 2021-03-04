@@ -4,32 +4,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 
 
 @Entity
-@Table(name="Address")
+@Table(name="ADDRESS")
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="street")
+	@Column(name = "ADDRESS_ID")
+	private long addressId;
+	@OneToOne
+	@JoinColumn(name = "USER_ID")
+	private long userId;
+	@Column(name="STREET")
 	private String street;
-	@Column(name="city")
+	@Column(name="CITY")
 	private String city;
-	@Column(name="state")
+	@Column(name="STATE")
 	private String state;
-	@Column(name="zipcode")
+	@Column(name="ZIPCODE")
 	private String zipcode;
+	
 	public Address() {
 		
-	}
-	public Address(String street, String city, String state, String zipcode) {
-		super();
-		this.street = street;
-		this.city = city;
-		this.state = state;
-		this.zipcode = zipcode;
 	}
 
 	public String getStreet() {
@@ -68,6 +69,4 @@ public class Address {
 	public String toString() {
 		return street + ", " + city + ", " + state + " " + zipcode;
 	}
-	
-	
 }
