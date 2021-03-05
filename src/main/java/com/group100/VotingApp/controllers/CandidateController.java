@@ -17,7 +17,7 @@ import com.group100.VotingApp.data.repository.CandidateRepository;
 
 
 @RestController
-@RequestMapping("/candidate")
+@RequestMapping("/candidates")
 public class CandidateController {
 
 	@Autowired 
@@ -28,11 +28,12 @@ public class CandidateController {
 		return candidateRepo.findAll();
 	}
 	
+	@GetMapping("/candidate/{id}")
 	public Candidate get(@PathVariable Long id) {
 		return candidateRepo.getOne(id);
 	}
 	
-	@PostMapping
+	@PostMapping("/add")
 	public Candidate create(@RequestBody final Candidate candidate) {
 		return candidateRepo.saveAndFlush(candidate);
 		}

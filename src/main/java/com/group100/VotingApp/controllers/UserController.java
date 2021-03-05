@@ -14,7 +14,7 @@ import com.group100.VotingApp.data.entity.User;
 import com.group100.VotingApp.data.repository.UserRepository;
 
 @RestController
-@RequestMapping("/User")
+@RequestMapping("/users")
 public class UserController {
 
 	@Autowired 
@@ -24,11 +24,13 @@ public class UserController {
 	public List<User> list(){
 		return userRepo.findAll();
 	}
+	
+	@GetMapping("/student/{id}")
 	public User get(@PathVariable Long id) {
 		return userRepo.getOne(id);
 	}
 	
-	@PostMapping
+	@PostMapping("/add")
 	public User create(@RequestBody final User user) {
 		return userRepo.saveAndFlush(user);
 		}
