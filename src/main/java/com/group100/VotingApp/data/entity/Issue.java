@@ -2,6 +2,7 @@ package com.group100.VotingApp.data.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,7 +27,8 @@ public class Issue {
 	private String topic;
 	@OneToOne(cascade = CascadeType.ALL)
 	private Survey survey;
-	// private List<String> opinions = new ArrayList<String>();
+	@ElementCollection
+	private List<String> opinions = new ArrayList<String>();
 
 	public Issue() {
 
@@ -34,7 +36,7 @@ public class Issue {
 
 	public Issue(String topic, List<String> opinions) {
 		this.topic = topic;
-		//this.opinions = opinions;
+		this.opinions = opinions;
 	}
 
 	public String getTopic() {
