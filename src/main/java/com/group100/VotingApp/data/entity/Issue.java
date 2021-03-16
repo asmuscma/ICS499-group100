@@ -47,11 +47,11 @@ public class Issue {
 		this.topic = topic;
 	}
 
-	/*public List<String> getOpinions() {
+	public List<String> getOpinions() {
 		return opinions;
 	}
 
 	public void setOpinions(List<String> opinions) {
 		this.opinions = opinions;
-	}*/
+	}
 }
