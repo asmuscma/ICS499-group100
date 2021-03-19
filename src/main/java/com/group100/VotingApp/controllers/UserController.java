@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.group100.VotingApp.data.entity.Address;
 import com.group100.VotingApp.data.entity.User;
+import com.group100.VotingApp.data.repository.AddressRepository;
 import com.group100.VotingApp.data.repository.UserRepository;
 
 @RestController
@@ -19,6 +21,9 @@ public class UserController {
 
 	@Autowired 
 	private UserRepository userRepo;
+	
+	@Autowired 
+	private AddressRepository addressRepo;
 	
 	@GetMapping("/all")
 	public List<User> list(){
@@ -32,6 +37,9 @@ public class UserController {
 	
 	@PostMapping("/add")
 	public User create(@RequestBody final User user) {
+		Address address = user.getAddress();
+		addressRepo.saveAndFlush(address);
+		user.setAddress(address);
 		return userRepo.saveAndFlush(user);
 		}
 }
