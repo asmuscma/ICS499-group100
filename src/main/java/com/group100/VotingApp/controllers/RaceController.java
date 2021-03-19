@@ -17,7 +17,7 @@ import com.group100.VotingApp.data.repository.RaceRepository;
 
 
 @RestController
-@RequestMapping("/Race")
+@RequestMapping("/race")
 public class RaceController {
 
 	@Autowired 
