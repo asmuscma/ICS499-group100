@@ -14,7 +14,7 @@ import com.group100.VotingApp.data.entity.Poll;
 import com.group100.VotingApp.data.repository.PollRepository;
 
 @RestController
-@RequestMapping("/issues")
+@RequestMapping("/poll")
 public class PollController {
 
 	@Autowired

@@ -4,20 +4,16 @@ import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import javax.persistence.OneToOne;
 
 @Entity
-@Table(name = "USER")
 public class User extends Person {
 	// @OneToOne(mappedBy = "user")
 	@OneToOne
 	private Address address;
-	@Column(name = "USERNAME")
+	@Column(unique = true)
 	private String username;
-	@Column(name = "PASSWORD")
 	private String password;
-	@Column(name = "DOB")
 	private LocalDate dob;
 
 	public User() {
