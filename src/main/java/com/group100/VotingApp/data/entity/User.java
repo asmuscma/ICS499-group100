@@ -1,6 +1,6 @@
 package com.group100.VotingApp.data.entity;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -18,7 +18,7 @@ public class User extends Person {
 	@Column(name = "PASSWORD")
 	private String password;
 	@Column(name = "DOB")
-	private Date dob;
+	private LocalDate dob;
 
 	public User() {
 
@@ -48,11 +48,11 @@ public class User extends Person {
 		this.password = password;
 	}
 
-	public Date getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(Date dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
 	}
 }

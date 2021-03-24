@@ -1,6 +1,7 @@
 package com.group100.VotingApp.serviceImp;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,8 +10,13 @@ import com.group100.VotingApp.service.UserService;
 public class UserServiceImp implements UserService {
 
 	@Override
-	public boolean isEighteen(Date dob) {
-		// TODO Auto-generated method stub
+	public boolean isEighteen(LocalDate dob) {
+		Period age = Period.between(dob, LocalDate.now());
+
+		if (age.getYears() >= 18) {
+			return true;
+		}
+
 		return false;
 	}
 
@@ -28,11 +34,11 @@ public class UserServiceImp implements UserService {
 		Matcher hasLetter = letter.matcher(password);
 		Matcher hasNumber = number.matcher(password);
 		Matcher hasSpecial = special.matcher(password);
-		
-		if(password.length() > 8 && hasLetter.find() && hasNumber.find() && hasSpecial.find()) {
+
+		if (password.length() > 8 && hasLetter.find() && hasNumber.find() && hasSpecial.find()) {
 			return true;
 		}
-		
+
 		return false;
 	}
 
