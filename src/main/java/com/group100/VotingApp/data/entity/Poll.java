@@ -1,6 +1,5 @@
 package com.group100.VotingApp.data.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,16 +12,16 @@ import javax.persistence.Id;
 @Entity
 public abstract class Poll {
 
-
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="question")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	long issueId;
 	String question;
-	@Column(name="answer")
 	String answer;
+
 	public Poll() {
-		
+
 	}
+
 	public Poll(String question, String answer) {
 		super();
 		this.question = question;
