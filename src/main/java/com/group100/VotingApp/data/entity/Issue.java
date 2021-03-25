@@ -1,14 +1,11 @@
 package com.group100.VotingApp.data.entity;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
-import javax.persistence.Table;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -17,15 +14,12 @@ import java.util.ArrayList;
  * candidates, and parties will have different opinions on.
  */
 @Entity
-@Table(name = "ISSUE")
 public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "ISSUE_ID")
 	private long issueId;
-	@Column(name = "TOPIC")
 	private String topic;
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	private Survey survey;
 	@ElementCollection
 	private List<String> opinions = new ArrayList<String>();

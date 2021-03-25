@@ -1,34 +1,14 @@
 package com.group100.VotingApp.data.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "RACE")
-public class Race {
-	@Id
-	@Column(name = "RACE_ID")
-	private int raceID;
-	@Column(name = "COUNT")
+public class Race extends Poll {
 	private int count;
-	@Column(name = "OFFICE")
 	private String office;
-	public Race() {
-		
-	}
-	public Race(int raceID, int count, String office) {
-		this.raceID = raceID;
-		this.count = count;
-		this.office = office;
-	}
 
-	/**
-	 * @return the raceID
-	 */
-	public int getRaceID() {
-		return raceID;
+	public Race() {
+
 	}
 
 	/**
@@ -43,13 +23,6 @@ public class Race {
 	 */
 	public String getOffice() {
 		return office;
-	}
-
-	/**
-	 * @param raceID the raceID to set
-	 */
-	public void setRaceID(int raceID) {
-		this.raceID = raceID;
 	}
 
 	/**

@@ -11,29 +11,36 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.group100.VotingApp.data.entity.Issue;
 import com.group100.VotingApp.data.entity.Survey;
-
+import com.group100.VotingApp.data.repository.IssueRepository;
 import com.group100.VotingApp.data.repository.SurveyRepository;
 
-
 @RestController
-@RequestMapping("/survey")
+@RequestMapping("/surveys")
 public class SurveyController {
 
-	@Autowired 
+	@Autowired
 	private SurveyRepository SurveyRepo;
-	
+
+	@Autowired
+	private IssueRepository issueRepo;
+
 	@GetMapping("/all")
-	public List<Survey> list(){
+	public List<Survey> list() {
 		return SurveyRepo.findAll();
 	}
-	
+
+	@GetMapping("/survey/{id}")
 	public Survey get(@PathVariable Long id) {
 		return SurveyRepo.getOne(id);
 	}
-	
-	@PostMapping
+
+	@PostMapping("/add")
 	public Survey create(@RequestBody final Survey survey) {
+		Issue issue = survey.getIssue();
+		issueRepo.saveAndFlush(issue);
+		survey.setIssue(issue);
 		return SurveyRepo.saveAndFlush(survey);
-		}
+	}
 }

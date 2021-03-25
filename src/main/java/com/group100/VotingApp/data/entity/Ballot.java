@@ -1,17 +1,11 @@
 package com.group100.VotingApp.data.entity;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "BALLOT")
 public class Ballot extends Poll {
-	@Column(name = "USER_ID")
 	private long userId;
-	@Column(name = "CANDIDATE_ID")
 	private long candidateId;
-	@Column(name = "OFFICE")
 	private String office;
 	public Ballot() {
 		
