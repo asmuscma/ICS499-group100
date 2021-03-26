@@ -14,6 +14,7 @@ import com.group100.VotingApp.data.entity.Address;
 import com.group100.VotingApp.data.entity.User;
 import com.group100.VotingApp.data.repository.AddressRepository;
 import com.group100.VotingApp.data.repository.UserRepository;
+import com.group100.VotingApp.serviceImp.UserServiceImp;
 
 @RestController
 @RequestMapping("/users")
@@ -24,6 +25,9 @@ public class UserController {
 	
 	@Autowired 
 	private AddressRepository addressRepo;
+	
+	@Autowired
+	private UserServiceImp userServiceImp;
 	
 	@GetMapping("/all")
 	public List<User> list(){
@@ -37,6 +41,12 @@ public class UserController {
 	
 	@PostMapping("/add")
 	public User create(@RequestBody final User user) {
+		if(!userServiceImp.passwordRequirementsMet(user.getPassword())) {
+			return null; //Return HTTP error response.
+		}
+		if(!userServiceImp.isEighteen(user.getDob())) {
+			return null; //Return HTTP error response.
+		}
 		Address address = user.getAddress();
 		addressRepo.saveAndFlush(address);
 		user.setAddress(address);
