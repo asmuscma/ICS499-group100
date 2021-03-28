@@ -21,6 +21,7 @@
 
 
 <!-- Survey start -->
+<form th:action="@{/save-project}" th:object="${project}" method="post"> <!-- Not sure if this works? Purpose is to databind to the backend -->
 <div class="container">
     <div class="col-md-2">
     </div>
@@ -461,6 +462,7 @@
 			<label class="btn btn-default" style="width: 150px">
 				<input type="Submit" autocomplete="off" />
 			</label>
+</form>
 		
 <!-- you need to include the shieldui css and js assets in order for the components to work -->
 <link rel="stylesheet" type="text/css" href="https://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
