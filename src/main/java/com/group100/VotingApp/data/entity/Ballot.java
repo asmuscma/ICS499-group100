@@ -7,32 +7,30 @@ import javax.persistence.OneToOne;
 public class Ballot extends Poll {
 	@OneToOne
 	private User user;
-	private long candidateId;
-	private String office;
+	@OneToOne
+	private Candidate candidate;
 
 	public Ballot() {
 
 	}
 
-	public Ballot(String question, String answer, long candidateId, String office) {
+	public Ballot(String question, String answer) {
 		super(question, answer);
-		this.candidateId = candidateId;
-		this.office = office;
 	}
 
-	public long getCandidateId() {
-		return candidateId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setCandidateId(int candidateId) {
-		this.candidateId = candidateId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public String getOffice() {
-		return office;
+	public Candidate getCandidate() {
+		return candidate;
 	}
 
-	public void setOffice(String office) {
-		this.office = office;
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
 	}
 }
