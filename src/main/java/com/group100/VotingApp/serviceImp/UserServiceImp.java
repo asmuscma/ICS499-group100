@@ -5,8 +5,11 @@ import java.time.Period;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.springframework.stereotype.Service;
+
 import com.group100.VotingApp.service.UserService;
 
+@Service
 public class UserServiceImp implements UserService {
 
 	@Override
@@ -21,12 +24,6 @@ public class UserServiceImp implements UserService {
 	}
 
 	@Override
-	public boolean uniqueUsername(String username) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
 	public boolean passwordRequirementsMet(String password) {
 		Pattern letter = Pattern.compile("[a-zA-z]");
 		Pattern number = Pattern.compile("[0-9]");
@@ -35,7 +32,7 @@ public class UserServiceImp implements UserService {
 		Matcher hasNumber = number.matcher(password);
 		Matcher hasSpecial = special.matcher(password);
 
-		if (password.length() > 8 && hasLetter.find() && hasNumber.find() && hasSpecial.find()) {
+		if (password.length() >= 8 && hasLetter.find() && hasNumber.find() && hasSpecial.find()) {
 			return true;
 		}
 

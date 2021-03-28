@@ -8,7 +8,6 @@ import javax.persistence.OneToOne;
 
 @Entity
 public class User extends Person {
-	// @OneToOne(mappedBy = "user")
 	@OneToOne
 	private Address address;
 	@Column(unique = true)
