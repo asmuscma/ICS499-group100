@@ -1,42 +1,53 @@
 package com.group100.VotingApp.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 @Entity
-public class Race extends Poll {
-	private int count;
+public class Race {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long raceId;
+	@ManyToOne
+	private User user;
+	@OneToOne
+	private Candidate candidate;
 	private String office;
 
 	public Race() {
-
+		
+	}
+	
+	public Race(Candidate candidate, String office) {
+		this.candidate = candidate;
+		this.office = office;
 	}
 
-	/**
-	 * @return the count
-	 */
-	public int getCount() {
-		return count;
+	public long getRaceId() {
+		return raceId;
 	}
 
-	/**
-	 * @return the office
-	 */
+	public void setRaceId(long raceId) {
+		this.raceId = raceId;
+	}
+
+	public Candidate getCandidate() {
+		return candidate;
+	}
+
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
+	}
+
 	public String getOffice() {
 		return office;
 	}
 
-	/**
-	 * @param count the count to set
-	 */
-	public void setCount(int count) {
-		this.count = count;
-	}
-
-	/**
-	 * @param office the office to set
-	 */
 	public void setOffice(String office) {
 		this.office = office;
 	}
-
 }

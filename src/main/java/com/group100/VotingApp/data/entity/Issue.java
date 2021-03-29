@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -19,7 +19,7 @@ public class Issue {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long issueId;
 	private String topic;
-	@OneToOne
+	@ManyToOne
 	private Survey survey;
 	@ElementCollection
 	private List<String> opinions = new ArrayList<String>();

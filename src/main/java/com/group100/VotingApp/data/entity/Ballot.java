@@ -1,14 +1,20 @@
 package com.group100.VotingApp.data.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 public class Ballot extends Poll {
 	@OneToOne
+	@Column(unique = true)
 	private User user;
-	@OneToOne
-	private Candidate candidate;
+	@OneToMany
+	private List<Race> raceList = new ArrayList<Race>();
 
 	public Ballot() {
 
@@ -26,11 +32,11 @@ public class Ballot extends Poll {
 		this.user = user;
 	}
 
-	public Candidate getCandidate() {
-		return candidate;
+	public List<Race> getRaceList() {
+		return raceList;
 	}
 
-	public void setCandidate(Candidate candidate) {
-		this.candidate = candidate;
+	public void setRace(List<Race> raceList) {
+		this.raceList = raceList;
 	}
 }
