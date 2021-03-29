@@ -4,12 +4,11 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.group100.VotingApp.data.entity.Issue;
 import com.group100.VotingApp.data.entity.Survey;
@@ -38,7 +37,7 @@ public class SurveyController {
 
 	@PostMapping("/add")
 	public Survey create(@RequestBody final Survey survey) {
-		Issue issue = survey.getIssue();
+		List<Issue> issue = survey.getIssueList();
 		issueRepo.saveAndFlush(issue);
 		survey.setIssue(issue);
 		return SurveyRepo.saveAndFlush(survey);
