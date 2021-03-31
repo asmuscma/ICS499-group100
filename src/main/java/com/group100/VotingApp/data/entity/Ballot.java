@@ -11,7 +11,7 @@ import java.util.ArrayList;
 @Entity
 public class Ballot extends Poll {
 	@OneToOne
-	@Column(unique = true)
+	//@Column(unique = true)
 	private User user;
 	@OneToMany
 	private List<Race> raceList = new ArrayList<Race>();

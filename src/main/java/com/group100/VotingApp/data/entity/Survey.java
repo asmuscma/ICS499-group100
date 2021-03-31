@@ -1,6 +1,9 @@
 package com.group100.VotingApp.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
@@ -8,8 +11,10 @@ import java.util.List;
 import java.util.ArrayList;
 
 @Entity
-public class Survey extends Poll {
-	
+public class Survey {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long surveyId;
 	@OneToOne
 	private User user;
 	@OneToMany
@@ -19,8 +24,8 @@ public class Survey extends Poll {
 
 	}
 
-	public Survey(String question, String answer, List<Issue> issueList) {
-		super(question, answer);
+	public Survey(User user, List<Issue> issueList) {
+		this.user = user;
 		this.issueList = issueList;
 	}
 

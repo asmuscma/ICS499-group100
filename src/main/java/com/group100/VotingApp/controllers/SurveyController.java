@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.group100.VotingApp.data.entity.Issue;
 import com.group100.VotingApp.data.entity.Survey;
-import com.group100.VotingApp.data.repository.IssueRepository;
 import com.group100.VotingApp.data.repository.SurveyRepository;
 
 @RestController
@@ -21,9 +19,6 @@ public class SurveyController {
 
 	@Autowired
 	private SurveyRepository SurveyRepo;
-
-	@Autowired
-	private IssueRepository issueRepo;
 
 	@GetMapping("/all")
 	public List<Survey> list() {
@@ -37,9 +32,6 @@ public class SurveyController {
 
 	@PostMapping("/add")
 	public Survey create(@RequestBody final Survey survey) {
-		List<Issue> issue = survey.getIssueList();
-		issueRepo.saveAndFlush(issue);
-		survey.setIssue(issue);
 		return SurveyRepo.saveAndFlush(survey);
 	}
 }

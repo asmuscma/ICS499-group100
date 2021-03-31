@@ -1,13 +1,10 @@
 package com.group100.VotingApp.data.entity;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  * An object that represents a political issue which different users,
@@ -21,16 +18,15 @@ public class Issue {
 	private String topic;
 	@ManyToOne
 	private Survey survey;
-	@ElementCollection
-	private List<String> opinions = new ArrayList<String>();
+	private String opinion;
 
 	public Issue() {
 
 	}
 
-	public Issue(String topic, List<String> opinions) {
+	public Issue(String topic, String opinion) {
 		this.topic = topic;
-		this.opinions = opinions;
+		this.opinion = opinion;
 	}
 
 	public String getTopic() {
@@ -41,11 +37,11 @@ public class Issue {
 		this.topic = topic;
 	}
 
-	public List<String> getOpinions() {
-		return opinions;
+	public String getOpinion() {
+		return opinion;
 	}
 
-	public void setOpinions(List<String> opinions) {
-		this.opinions = opinions;
+	public void setOpinion(String opinions) {
+		this.opinion = opinions;
 	}
 }
