@@ -16,15 +16,13 @@ public class Race {
 	private User user;
 	@OneToOne
 	private Candidate candidate;
-	private String office;
 
 	public Race() {
-		
+
 	}
-	
-	public Race(Candidate candidate, String office) {
+
+	public Race(Candidate candidate) {
 		this.candidate = candidate;
-		this.office = office;
 	}
 
 	public long getRaceId() {
@@ -41,13 +39,5 @@ public class Race {
 
 	public void setCandidate(Candidate candidate) {
 		this.candidate = candidate;
-	}
-
-	public String getOffice() {
-		return office;
-	}
-
-	public void setOffice(String office) {
-		this.office = office;
 	}
 }

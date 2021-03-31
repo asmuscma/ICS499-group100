@@ -1,17 +1,21 @@
 package com.group100.VotingApp.data.entity;
 
-import javax.persistence.Column;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import java.util.List;
-import java.util.ArrayList;
-
 @Entity
-public class Ballot extends Poll {
+public class Ballot {
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long ballotId;
 	@OneToOne
-	//@Column(unique = true)
 	private User user;
 	@OneToMany
 	private List<Race> raceList = new ArrayList<Race>();
@@ -20,8 +24,9 @@ public class Ballot extends Poll {
 
 	}
 
-	public Ballot(String question, String answer) {
-		super(question, answer);
+	public Ballot(User user, List<Race> raceList) {
+		this.user = user;
+		this.raceList = raceList;
 	}
 
 	public User getUser() {

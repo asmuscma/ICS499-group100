@@ -18,20 +18,20 @@ import com.group100.VotingApp.data.repository.SurveyRepository;
 public class SurveyController {
 
 	@Autowired
-	private SurveyRepository SurveyRepo;
+	private SurveyRepository surveyRepo;
 
 	@GetMapping("/all")
 	public List<Survey> list() {
-		return SurveyRepo.findAll();
+		return surveyRepo.findAll();
 	}
 
 	@GetMapping("/survey/{id}")
 	public Survey get(@PathVariable Long id) {
-		return SurveyRepo.getOne(id);
+		return surveyRepo.getOne(id);
 	}
 
 	@PostMapping("/add")
 	public Survey create(@RequestBody final Survey survey) {
-		return SurveyRepo.saveAndFlush(survey);
+		return surveyRepo.saveAndFlush(survey);
 	}
 }
