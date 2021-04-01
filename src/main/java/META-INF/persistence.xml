@@ -5,7 +5,6 @@
 	    <class>com.group100.VotingApp.data.entity.Ballot</class>
 	    <class>com.group100.VotingApp.data.entity.Candidate</class>
 	    <class>com.group100.VotingApp.data.entity.Person</class>
-	    <class>com.group100.VotingApp.data.entity.Poll</class>
 	    <class>com.group100.VotingApp.data.entity.Race</class>
 	    <class>com.group100.VotingApp.data.entity.Survey</class>
 	    <class>com.group100.VotingApp.data.entity.User</class>
