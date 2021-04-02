@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 public class Candidate extends Person {
 	private String party;
 	private String office;
+	private String state;
 	
 	public Candidate() {
 		
@@ -27,4 +28,11 @@ public class Candidate extends Person {
 		this.office = office;
 	}
 
+	public String getState() {
+		return state;
+	}
+
+	public void setState(String state) {
+		this.state = state;
+	}
 }

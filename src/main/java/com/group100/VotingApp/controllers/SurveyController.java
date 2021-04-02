@@ -32,6 +32,9 @@ public class SurveyController {
 
 	@PostMapping("/add")
 	public Survey create(@RequestBody final Survey survey) {
-		return surveyRepo.saveAndFlush(survey);
+		if(surveyRepo.findByUsername(survey.getUser().getUsername()) != null) {
+			return surveyRepo.saveAndFlush(survey);
+		}
+		return null;
 	}
 }

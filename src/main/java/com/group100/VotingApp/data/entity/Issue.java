@@ -16,6 +16,7 @@ public class Issue {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long issueId;
 	private String topic;
+	private String question;
 	@ManyToOne
 	private Survey survey;
 	private String opinion;
@@ -35,6 +36,30 @@ public class Issue {
 
 	public void setTopic(String topic) {
 		this.topic = topic;
+	}
+	
+	public long getIssueId() {
+		return issueId;
+	}
+
+	public void setIssueId(long issueId) {
+		this.issueId = issueId;
+	}
+
+	public Survey getSurvey() {
+		return survey;
+	}
+
+	public void setSurvey(Survey survey) {
+		this.survey = survey;
+	}
+
+	public String getQuestion() {
+		return question;
+	}
+
+	public void setQuestion(String question) {
+		this.question = question;
 	}
 
 	public String getOpinion() {

@@ -20,6 +20,26 @@ public class Survey {
 	@OneToMany
 	private List<Issue> issueList = new ArrayList<Issue>();
 
+	public long getSurveyId() {
+		return surveyId;
+	}
+
+	public void setSurveyId(long surveyId) {
+		this.surveyId = surveyId;
+	}
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public void setIssueList(List<Issue> issueList) {
+		this.issueList = issueList;
+	}
+
 	public Survey() {
 
 	}
