@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.group100.VotingApp.data.entity.Ballot;
 import com.group100.VotingApp.data.repository.BallotRepository;
+import com.group100.VotingApp.serviceImp.BallotServiceImp;
 
 @RestController
 @RequestMapping("/ballots")
@@ -19,6 +20,9 @@ public class BallotController {
 
 	@Autowired
 	private BallotRepository ballotRepo;
+	
+	@Autowired
+	private BallotServiceImp ballotServiceImp;
 
 	@GetMapping("/all")
 	public List<Ballot> list() {
@@ -32,6 +36,9 @@ public class BallotController {
 
 	@PostMapping("/add")
 	public Ballot create(@RequestBody final Ballot ballot) {
-		return ballotRepo.saveAndFlush(ballot);
+		if(!ballotServiceImp.checkIfVoted(ballot.getUser().getUsername())) {
+			return ballotRepo.saveAndFlush(ballot);
+		}
+		return null;
 	}
 }

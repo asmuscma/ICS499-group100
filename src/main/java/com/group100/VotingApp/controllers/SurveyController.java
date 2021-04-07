@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.group100.VotingApp.data.entity.Survey;
 import com.group100.VotingApp.data.repository.SurveyRepository;
+import com.group100.VotingApp.serviceImp.SurveyServiceImp;
 
 @RestController
 @RequestMapping("/surveys")
@@ -19,6 +20,9 @@ public class SurveyController {
 
 	@Autowired
 	private SurveyRepository surveyRepo;
+	
+	@Autowired
+	private SurveyServiceImp surveyServiceImp;
 
 	@GetMapping("/all")
 	public List<Survey> list() {
@@ -32,7 +36,7 @@ public class SurveyController {
 
 	@PostMapping("/add")
 	public Survey create(@RequestBody final Survey survey) {
-		if(surveyRepo.findByUsername(survey.getUser().getUsername()) != null) {
+		if(!surveyServiceImp.checkIfVoted(survey.getUser().getUsername())) {
 			return surveyRepo.saveAndFlush(survey);
 		}
 		return null;
