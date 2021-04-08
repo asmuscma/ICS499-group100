@@ -1,6 +1,7 @@
 package com.group100.VotingApp.serviceImp;
 
 import com.group100.VotingApp.data.entity.Candidate;
+import com.group100.VotingApp.data.entity.User;
 import com.group100.VotingApp.data.repository.BallotRepository;
 import com.group100.VotingApp.service.BallotService;
 
@@ -19,8 +20,8 @@ public class BallotServiceImp implements BallotService {
 	private BallotRepository ballotRepo;
 
 	@Override
-	public boolean checkIfVoted(String username) {
-		if(ballotRepo.findByUsername(username) != null) {
+	public boolean checkIfVoted(User user) {
+		if(ballotRepo.findByUser(user) != null) {
 			return true;
 		}
 		return false;
@@ -33,5 +34,4 @@ public class BallotServiceImp implements BallotService {
 		Map<Candidate, Long> freq = voteList.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
 		return freq;
 	}
-
 }

@@ -19,13 +19,13 @@ public class Issue {
 	private String question;
 	@ManyToOne
 	private Survey survey;
-	private String opinion;
+	private long opinion;
 
 	public Issue() {
 
 	}
 
-	public Issue(String topic, String opinion) {
+	public Issue(String topic, long opinion) {
 		this.topic = topic;
 		this.opinion = opinion;
 	}
@@ -62,11 +62,11 @@ public class Issue {
 		this.question = question;
 	}
 
-	public String getOpinion() {
+	public long getOpinion() {
 		return opinion;
 	}
 
-	public void setOpinion(String opinions) {
-		this.opinion = opinions;
+	public void setOpinion(long opinion) {
+		this.opinion = opinion;
 	}
 }

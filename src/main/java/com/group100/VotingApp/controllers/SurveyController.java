@@ -36,7 +36,7 @@ public class SurveyController {
 
 	@PostMapping("/add")
 	public Survey create(@RequestBody final Survey survey) {
-		if(!surveyServiceImp.checkIfVoted(survey.getUser().getUsername())) {
+		if(!surveyServiceImp.checkIfVoted(survey.getUser())) {
 			return surveyRepo.saveAndFlush(survey);
 		}
 		return null;

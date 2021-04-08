@@ -36,7 +36,7 @@ public class BallotController {
 
 	@PostMapping("/add")
 	public Ballot create(@RequestBody final Ballot ballot) {
-		if(!ballotServiceImp.checkIfVoted(ballot.getUser().getUsername())) {
+		if(!ballotServiceImp.checkIfVoted(ballot.getUser())) {
 			return ballotRepo.saveAndFlush(ballot);
 		}
 		return null;

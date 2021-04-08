@@ -8,5 +8,5 @@ import com.group100.VotingApp.data.entity.User;
 
 @Repository
 public interface SurveyRepository extends JpaRepository<Survey, Long> {
-	public User findByUsername(String username);
+	public User findByUser(User user);
 }
