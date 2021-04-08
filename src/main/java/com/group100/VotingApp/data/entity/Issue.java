@@ -15,6 +15,8 @@ public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long issueId;
+	@ManyToOne
+	private User user;
 	private String topic;
 	private String question;
 	@ManyToOne

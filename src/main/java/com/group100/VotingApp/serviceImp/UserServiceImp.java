@@ -5,6 +5,7 @@ import java.time.Period;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.group100.VotingApp.data.repository.UserRepository;
@@ -13,6 +14,7 @@ import com.group100.VotingApp.service.UserService;
 @Service
 public class UserServiceImp implements UserService {
 	
+	@Autowired
 	private UserRepository userRepo;
 
 	@Override
