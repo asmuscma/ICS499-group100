@@ -7,5 +7,5 @@ import com.group100.VotingApp.data.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
-
+	public boolean findByUsernameAndPassword(String username, String password);
 }

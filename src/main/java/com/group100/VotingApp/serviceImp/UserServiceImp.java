@@ -7,10 +7,13 @@ import java.util.regex.Pattern;
 
 import org.springframework.stereotype.Service;
 
+import com.group100.VotingApp.data.repository.UserRepository;
 import com.group100.VotingApp.service.UserService;
 
 @Service
 public class UserServiceImp implements UserService {
+	
+	private UserRepository userRepo;
 
 	@Override
 	public boolean isEighteen(LocalDate dob) {
@@ -41,7 +44,9 @@ public class UserServiceImp implements UserService {
 
 	@Override
 	public boolean isValid(String username, String password) {
-		// TODO Auto-generated method stub
+		if(userRepo.findByUsernameAndPassword(username, password)) {
+			return true;
+		}
 		return false;
 	}
 
