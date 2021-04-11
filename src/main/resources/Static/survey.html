@@ -1,5 +1,5 @@
-<!DOCTYPE html th>
-<html>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
     <title>Political Survey</title>
@@ -7,9 +7,14 @@
 
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-
+	<link rel="stylesheet" type="text/css" href="https://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
     <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <style>
+    .slider {
+        width: 100%;
+    }
+</style>
 </head>
 <body>
 
@@ -22,7 +27,7 @@
 
 
 <!-- Survey start -->
-<form th:action="@{/Survey/add}"   method= "post" >
+<form th:action="@{/Survey/add}" th:object="${Survey}" method= "POST" >
 <div class="container">
     <div class="col-md-2">
     </div>
@@ -399,10 +404,11 @@
 			</div>
 			</div>
 			</form>
+		
 			
 		
 <!-- you need to include the shieldui css and js assets in order for the components to work -->
-<link rel="stylesheet" type="text/css" href="https://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+
 <script type="text/javascript" src="https://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 
 <script type="text/javascript">
@@ -499,13 +505,6 @@
         });
     });
 </script>
-
-<style>
-    .slider {
-        width: 100%;
-    }
-</style>
-
 <!-- Survey - END -->
 
 </div>
