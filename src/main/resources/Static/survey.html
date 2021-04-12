@@ -27,7 +27,7 @@
 
 
 <!-- Survey start -->
-<form th:action="@{/Survey/add}" th:object="${Survey}" method= "POST" > 
+<form th:action="@{/createSurvey}" th:object="${Survey}" method= "Get" > 
 <div class="container">
     <div class="col-md-2">
     </div>
@@ -36,29 +36,29 @@
 		
 			<!--Criminal Issues -->
 		
-            <div class="panel-heading">Criminal Issues</div>
+            <div class="panel-heading" th:field="*{topic}" id="criminal">Criminal Issues
             <div class="panel-body">
                 Should funding for local police departments be redirected to social and community based programs?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off"th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative"/> No
                     </label>
                 </div>
                 <br />
                 <br />
-
+                
                 Should police departments be allowed to use military grade equipment?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off"  value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 </div>
                 <br />
@@ -68,10 +68,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative"/> No
                     </label>
                 </div>
                 <br />
@@ -81,16 +81,16 @@
 		
 		<!--Education Issues-->
 		<div class="panel panel-default">
-            <div class="panel-heading">Education Issues</div>
+            <div class="panel-heading"  th:field="*{topic}" id="education">Education Issues</div>
             <div class="panel-body">
                 Do you support increasing taxes for the rich in order to reduce interest rates for student loans?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
                     </label>
                 </div>
                 <br />
@@ -100,10 +100,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}"value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative"/> No
                     </label>
                 </div>
                 <br />
@@ -113,10 +113,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
                     </label>
 					
                 </div>
@@ -127,16 +127,16 @@
 		
 		<!--Enviormental Issues-->
 		<div class="panel panel-default">
-            <div class="panel-heading">Enviormental Issues</div>
+            <div class="panel-heading" th:field="*{topic}" id="environmental">Enviormental Issues</div>
             <div class="panel-body">
                 Should the government increase environmental regulations to prevent climate change?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}"value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative" /> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative" /> No
                     </label>
                 </div>
                 <br />
@@ -146,10 +146,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
                     </label>
 					
                 </div>
@@ -160,10 +160,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
                     </label>
 					
                 </div>
@@ -174,16 +174,16 @@
 		
 		<!--Electoral Issues-->
 		<div class="panel panel-default">
-            <div class="panel-heading">Electoral Issues</div>
+            <div class="panel-heading" th:field="*{topic}" id="electoral">Electoral Issues</div>
             <div class="panel-body">
                 Should the electoral college be abolished?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative" /> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" /> No
                     </label>
                 </div>
                 <br />
@@ -193,10 +193,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative"/> No
                     </label>
                 </div>
                 <br />
@@ -206,10 +206,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative" /> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" /> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 </div>
                 <br />
@@ -219,16 +219,16 @@
 		
 		<!--Domestic Policy Issues-->
 		<div class="panel panel-default">
-            <div class="panel-heading">Domestic Policy Issues</div>
+            <div class="panel-heading" th:field="*{topic}" id="Domestic Policy">Domestic Policy Issues</div>
             <div class="panel-body">
                 Should there be more restrictions on the current process of purchasing a gun?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
                     </label>
                 </div>
                 <br />
@@ -238,10 +238,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 </div>
                 <br />
@@ -251,10 +251,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 </div>
                 <br />
@@ -264,16 +264,16 @@
 		
 		<!--Foreign Policy Issues-->
 		<div class="panel panel-default">
-            <div class="panel-heading">Foreign Policy Issues</div>
+            <div class="panel-heading" th:field="*{topic}" id="Foreign Policy">Foreign Policy Issues</div>
             <div class="panel-body">
                 Should the government increase military spending?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 </div>
                 <br />
@@ -283,10 +283,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservate"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservate"/> No
                     </label>
                 </div>
                 <br />
@@ -296,10 +296,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 </div>
                 <br />
@@ -309,16 +309,16 @@
 		
 		<!--Social Issues-->
 		<div class="panel panel-default">
-            <div class="panel-heading">Social Issues</div>
+            <div class="panel-heading" th:field="*{topic}" id="Social Issues">Social Issues</div>
             <div class="panel-body">
                 Should the government continue to fund Planned Parenthood?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
                     </label>
                 </div>
                 <br />
@@ -328,10 +328,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 <br />
                 <br />
@@ -340,10 +340,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 </div>
                 <br />
@@ -354,16 +354,16 @@
 		
 		<!--Healthcare Issues-->
 		<div class="panel panel-default">
-            <div class="panel-heading">Healthcare Issues</div>
+            <div class="panel-heading" th:field="*{topic}" id="Healthcare">Healthcare Issues</div>
             <div class="panel-body">
                 Should the federal government increase funding of health care for low income individuals (Medicaid)?
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative" /> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" /> No
                     </label>
 					
                 </div>
@@ -374,10 +374,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
                     </label>
 					
                 </div>
@@ -387,10 +387,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Conservative" /> Yes
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" /> Yes
                     </label>
                     <label class="btn btn-default" style="width: 70px">
-                        <input type="radio" autocomplete="off" value="Liberal"/> No
+                        <input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
                     </label>
                 </div>
                 <br />
@@ -402,6 +402,7 @@
 			<label class="btn btn-default" style="width: 150px">
 				<input type="Submit" value="Submit"/>
 			</label>
+			</div>
 			</div>
 			</div>
 			</form>
