@@ -64,7 +64,7 @@ lang="en">
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form th:action="@{/addUser}" th:object="${user}" method="Get" class="register-form" id="register-form">
+                        <form th:action="@{/register}" th:object="${user}" method="Get" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="firstName"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" th:field="*{fName}"name="firstName" id="firstname" placeholder="first Name"/>
