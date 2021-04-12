@@ -52,4 +52,12 @@ public class UserController {
 		user.setAddress(address);
 		return userRepo.saveAndFlush(user);
 		}
+	
+	
+	
+	
+	
+	
+	
+	
 }
