@@ -35,7 +35,7 @@ lang="en">
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="Home.html">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="candidate.html">Candidates</a>
@@ -64,7 +64,7 @@ lang="en">
                 <div class="signup-content">
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
-                        <form th:action="@{/register}" th:object="${user}" method="Get" class="register-form" id="register-form">
+                        <form th:action="@{/register}" th:object="${user}" method="GET" class="register-form" id="register-form">
                             <div class="form-group">
                                 <label for="firstName"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" th:field="*{fName}"name="firstName" id="firstname" placeholder="first Name"/>
@@ -123,20 +123,7 @@ lang="en">
                     </div>
                 </div>
        </section>
-       <table class="table table-striped table-bordered">
-    <tr>
-        
-        <th>UserName</th>
-        <th>First Name</th>
-       
-    </tr>
-    <tr th:each="user : ${user}">
-   
-        <td th:text="${user.username}">"${user.username}"</td>
-        <td th:text="${user.fname}">"${user.fname}"</td>
-      
-    </tr>
-</table>
+    
        
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>

@@ -1,13 +1,14 @@
 package com.group100.VotingApp.controllers;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class HomeController {
 	
-	@RequestMapping("/home")
-	public String test() {
-		return "Home";
+	@GetMapping("/Home")
+	public String home() {
+	return "index";
 	}
 }
