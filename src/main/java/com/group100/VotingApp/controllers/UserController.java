@@ -54,29 +54,4 @@ public class UserController {
 		user.setAddress(address);
 		return userRepo.saveAndFlush(user);
 		}
-		
-	@GetMapping("/register")
-	public String showForm(Model model) {
-		
-		User user = new User();
-		if(!userServiceImp.passwordRequirementsMet(user.getPassword())) {
-			return null; //Return HTTP error response.
-		}
-		if(!userServiceImp.isEighteen(user.getDob())) {
-			return null; //Return HTTP error response.
-		}
-		model.addAttribute("User", user);
-		return "registration";
-	}
-	@PostMapping("/register")
-	public String submitForm(@ModelAttribute("user") User user) {
-		return "user";
-	}
-	
-	
-	
-	
-	
-	
-	
 }

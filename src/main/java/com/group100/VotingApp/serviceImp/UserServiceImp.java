@@ -6,8 +6,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import com.group100.VotingApp.data.entity.User;
 import com.group100.VotingApp.data.repository.UserRepository;
 import com.group100.VotingApp.service.UserService;
 
@@ -16,6 +18,9 @@ public class UserServiceImp implements UserService {
 	
 	@Autowired
 	private UserRepository userRepo;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 
 	@Override
 	public boolean isEighteen(LocalDate dob) {
@@ -50,6 +55,20 @@ public class UserServiceImp implements UserService {
 			return true;
 		}
 		return false;
+	}
+	
+	@Override
+	public void encodePassword(User user) {
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
+	}
+	
+	@Override
+	public void register(User user) {
+		if(passwordRequirementsMet(user.getPassword())) {
+			if(isEighteen(user.getDob())) {
+				userRepo.save(user);
+			}
+		}
 	}
 
 }
