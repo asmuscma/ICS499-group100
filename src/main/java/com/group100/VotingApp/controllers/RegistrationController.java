@@ -24,6 +24,6 @@ public class RegistrationController {
 	@PostMapping("/register")
 	public String userRegistration(User user, final Model model) {
 		userService.register(user);
-		return "/home";
+		return "/index";
 	}
 }
