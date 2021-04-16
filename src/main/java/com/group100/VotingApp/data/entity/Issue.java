@@ -18,7 +18,6 @@ public class Issue {
 	@ManyToOne
 	private User user;
 	private String topic;
-	private String question;
 	@ManyToOne
 	private Survey survey;
 	private long opinion;
@@ -54,14 +53,6 @@ public class Issue {
 
 	public void setSurvey(Survey survey) {
 		this.survey = survey;
-	}
-
-	public String getQuestion() {
-		return question;
-	}
-
-	public void setQuestion(String question) {
-		this.question = question;
 	}
 
 	public long getOpinion() {
