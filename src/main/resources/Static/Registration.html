@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<title>Registration</title>
+<link rel="stylesheet"
+	href="vendors/owl-carousel/css/owl.carousel.min.css">
+<link rel="stylesheet"
+	href="vendors/owl-carousel/css/owl.theme.default.css">
+<link rel="stylesheet"
+	href="vendors/mdi/css/materialdesignicons.min.css">
+<link rel="stylesheet" href="vendors/aos/css/aos.css">
+<link rel="stylesheet" href="css/style.min.css">
+<!-- Font Icon -->
+<link rel="stylesheet"
+	href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+<!-- Main css -->
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header id="header-section">
+		<nav class="navbar navbar-expand-lg pl-3 pl-sm-0" id="navbar">
+			<div class="container">
+				<div class="navbar-brand-wrapper d-flex w-100">
+					<img src="images/Ballot.jpg" alt="">
+					<button class="navbar-toggler ml-auto" type="button"
+						data-toggle="collapse" data-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent" aria-expanded="false"
+						aria-label="Toggle navigation">
+						<span class="mdi mdi-menu navbar-toggler-icon"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse navbar-menu-wrapper"
+					id="navbarSupportedContent">
+					<ul
+						class="navbar-nav align-items-lg-center align-items-start ml-auto">
+						<li
+							class="d-flex align-items-center justify-content-between pl-4 pl-lg-0">
+							<div class="navbar-collapse-logo">
+								<img src="images/Group2.svg" alt="">
+							</div>
+							<button class="navbar-toggler close-button" type="button"
+								data-toggle="collapse" data-target="#navbarSupportedContent"
+								aria-controls="navbarSupportedContent" aria-expanded="false"
+								aria-label="Toggle navigation">
+								<span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
+							</button>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="index.html">Home
+								<span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link"
+							href="candidate.html">Candidates</a></li>
+						<li class="nav-item"><a class="nav-link" href="about.html">About</a>
+						</li>
+						<li class="nav-item btn-contact-us pl-4 pl-lg-0"><a
+							href=contact.html class="btn btn-info" data-toggle="modal">Contact
+								Us </a></li>
+
+						<li><a href="login.html">Login</a> <br> <a
+							href="Registration.html">Register</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<!-- Sign up form -->
+	<section class="signup">
+		<div class="container">
+			<div class="signup-content">
+				<div class="signup-form">
+					<h2 class="form-title">Sign up</h2>
+					<form th:action="@{/register}" th:object="${user}" method="GET"
+						class="register-form" id="register-form">
+						<div class="form-group">
+							<label for="firstName"><i
+								class="zmdi zmdi-account material-icons-name"></i></label> <input
+								type="text" th:field="*{fName}" name="firstName" id="firstname"
+								placeholder="first Name" />
+						</div>
+						<div class="form-group">
+							<label for="lastName"><i
+								class="zmdi zmdi-account material-icons-name"></i></label> <input
+								type="text" th:field="*{lName}" name="lastName" id="lastname"
+								placeholder="last Name" />
+						</div>
+						<div class="form-group">
+							<label for="Street"><i
+								class="zmdi zmdi-account material-icons-name"></i></label> <input
+								type="text" th:field="*{street}" name="Street" id="Street"
+								placeholder="Street" />
+						</div>
+						<div class="form-group">
+							<label for="City"><i
+								class="zmdi zmdi-account material-icons-name"></i></label> <input
+								type="text" th:field="*{city}" name="City" id="City"
+								placeholder="City" />
+						</div>
+						<div class="form-group">
+							<label for="State"><i
+								class="zmdi zmdi-account material-icons-name"></i></label> <input
+								type="text" th:field="*{state}" name="State" id="State"
+								placeholder="State" />
+						</div>
+						<div class="form-group">
+							<label for="Zip"><i
+								class="zmdi zmdi-account material-icons-name"></i></label> <input
+								type="text" th:field="*{zipcode}" name="Zip" id="Zip"
+								placeholder="Zip" />
+						</div>
+
+						<div class="form-group">
+							<label for="date"><i
+								class="zmdi zmdi-account material-icons-name"></i></label> <input
+								type="date" th:feld="*{dob}" name="date" id="date" />
+
+
+
+						</div>
+						<div class="form-group">
+							<label for="email"><i class="zmdi zmdi-email"></i></label> <input
+								type="email" th:field="*{email}" name="email" id="email"
+								placeholder="Your Email" />
+						</div>
+						<div class="form-group">
+							<label for="username"><i
+								class="zmdi zmdi-account material-icons-name"></i></label> <input
+								type="text" th:field="*{username}" name="username" id="username"
+								placeholder="userName" />
+						</div>
+
+						<div class="form-group">
+							<label for="pass"><i class="zmdi zmdi-lock"></i></label> <input
+								type="password" th:field="*{password}" name="pass" id="pass"
+								placeholder="Password" />
+						</div>
+						<div class="form-group">
+							<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
+							<input type="password" name="re_pass" id="re_pass"
+								placeholder="Repeat your password" />
+						</div>
+						<div class="form-group">
+							<input type="checkbox" name="agree-term" id="agree-term"
+								class="agree-term" /> <label for="agree-term"
+								class="label-agree-term"><span><span></span></span>I
+								agree all statements in <a href="#" class="term-service">Terms
+									of service</a></label>
+						</div>
+						<div class="form-group form-button">
+							<input type="submit" name="signup" id="signup"
+								class="form-submit" value="Register"/>
+							<script>
+							var x = document.getElementById("signup");
+							x.addEventListener("click", confirmation);
+							x.addEventListener("click", ageCheck);
+
+								function confirmation() {
+									alert("you pressed submit");
+								}
+							
+							 	function ageCheck(){
+								  var userinput = document.getElementById("date").value;
+								    var dob = new Date(userinput);
+								    if(userinput==null || userinput=='') {
+								      document.getElementById("message").innerHTML = "**Choose a date please!";  
+								      return false; 
+								    } else {
+								    
+								    //calculate month difference from current date in time
+								    var month_diff = Date.now() - dob.getTime();
+								    
+								    //convert the calculated difference in date format
+								    var age_dt = new Date(month_diff); 
+								    
+								    //extract year from date    
+								    var year = age_dt.getUTCFullYear();
+								    
+								    //now calculate the age of the user
+								    var age = Math.abs(year - 1970);
+								    
+								 //display the calculated age
+								 if(age < 18){
+							             alert("You are younger than 18");
+								    }
+								 else alert("You are of age");
+								    }
+							 	}
+							</script>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+</body>
+<!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
