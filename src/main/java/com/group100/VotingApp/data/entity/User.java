@@ -2,6 +2,7 @@ package com.group100.VotingApp.data.entity;
 
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
@@ -10,7 +11,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class User extends Person {
-	@OneToOne
+	@OneToOne(cascade = { CascadeType.ALL })
 	private Address address;
 	@Column(unique = true)
 	private String username;
@@ -51,7 +52,7 @@ public class User extends Person {
 	}
 
 	public void setDob(LocalDate dob) {
-		
+
 		this.dob = dob;
 	}
 }
