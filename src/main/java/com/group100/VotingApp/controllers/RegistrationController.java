@@ -25,6 +25,6 @@ public class RegistrationController {
 	@PostMapping("/register")
 	public String submitForm(@ModelAttribute("user") User user) {
 		userService.register(user);
-		return "/static/login";
+		return "/login";
 	}
 }
