@@ -6,6 +6,8 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class User extends Person {
 	@OneToOne
@@ -13,6 +15,7 @@ public class User extends Person {
 	@Column(unique = true)
 	private String username;
 	private String password;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dob;
 
 	public User() {
@@ -48,6 +51,7 @@ public class User extends Person {
 	}
 
 	public void setDob(LocalDate dob) {
+		
 		this.dob = dob;
 	}
 }
