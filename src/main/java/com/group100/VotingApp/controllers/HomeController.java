@@ -14,6 +14,18 @@ public class HomeController {
 	    ModelAndView modelAndView = new ModelAndView();
 	    modelAndView.setViewName("index");
 	    return modelAndView;
-
+	}
+	
+	@RequestMapping("/about")
+	public ModelAndView about() {
+	    ModelAndView modelAndView = new ModelAndView();
+	    modelAndView.setViewName("about");
+	    return modelAndView;
+	}
+	@RequestMapping("/candidate")
+	public ModelAndView candidate() {
+	    ModelAndView modelAndView = new ModelAndView();
+	    modelAndView.setViewName("candidate");
+	    return modelAndView;
 	}
 }
