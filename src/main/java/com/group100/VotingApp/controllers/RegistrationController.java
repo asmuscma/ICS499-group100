@@ -8,13 +8,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.group100.VotingApp.data.entity.User;
-import com.group100.VotingApp.service.UserService;
+import com.group100.VotingApp.serviceImp.UserServiceImp;
 
 @Controller
 public class RegistrationController {
 	
 	@Autowired
-	private UserService userService;
+	private UserServiceImp userService;
 	
 	@GetMapping("/register")
 	public String register(final Model model) {
