@@ -1,47 +1,63 @@
 package com.group100.VotingApp;
 
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.authentication.AuthenticationFailureHandler;
+import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
+			.csrf()
+				.disable()
 			.authorizeRequests()
 				.antMatchers("/**", "/index").permitAll()
 				.anyRequest().authenticated()
 				.and()
 			.formLogin()
-				.loginPage("/Login")
+				.loginPage("/login.html")
+				.loginProcessingUrl("login_process")
+				.failureUrl("/login.html?error=true")
+				.failureHandler(new AuthenticationFailureHandler() {
+					@Override
+					public void onAuthenticationFailure(HttpServletRequest request, 
+							HttpServletResponse response, AuthenticationException exception) 
+							throws IOException, ServletException {
+						response.sendRedirect(request.getContextPath() + "/login?error");
+						}
+					})
 				.permitAll()
 				.and()
 			.logout()
+				.logoutUrl("/logout_process")
+				.deleteCookies("JSESSIONID")
+				.logoutSuccessHandler(new LogoutSuccessHandler() {
+					@Override
+					public void onLogoutSuccess (HttpServletRequest request, 
+							HttpServletResponse response, Authentication authentication)
+					throws IOException, ServletException {
+						response.sendRedirect(request.getContextPath());
+					}
+				})
 				.permitAll();
 	}
-	/*
-	@Bean
-	@Override
-	public UserDetailsService userDetailsService() {
-		UserDetails user =
-			 User.withDefaultPasswordEncoder()
-				.username("user")
-				.password("password")
-				.roles("USER")
-				.build();
-
-		return new InMemoryUserDetailsManager(user);
-	} */
 	
 	@Bean
 	PasswordEncoder passwordEncoder() {
