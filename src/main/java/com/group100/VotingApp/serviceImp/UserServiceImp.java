@@ -66,6 +66,7 @@ public class UserServiceImp implements UserService {
 	public void register(User user) {
 		if(passwordRequirementsMet(user.getPassword())) {
 			if(isEighteen(user.getDob())) {
+				encodePassword(user);
 				userRepo.save(user);
 			}
 		}
