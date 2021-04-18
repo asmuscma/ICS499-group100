@@ -5,10 +5,14 @@ import org.springframework.web.servlet.ModelAndView;
 
 public class LoginController {
 	
-	@RequestMapping("/login")
+	/*
+	 * this doesn't work
+	 * 
+	 * @RequestMapping("/login")
 	public ModelAndView login() {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("login");
 		return model;
 	}
+	*/
 }

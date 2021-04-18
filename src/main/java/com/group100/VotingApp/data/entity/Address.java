@@ -6,16 +6,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+@Valid
 @Entity
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long addressId;
+	@NotBlank (message ="can't be empty")
 	@OneToOne
+	 @NotBlank
 	private User user;
+	 @NotBlank
 	private String street;
+	 @NotBlank
 	private String city;
+	 @NotBlank
 	private String state;
+	 @NotBlank
 	private String zipcode;
 
 	public Address() {

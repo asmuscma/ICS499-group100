@@ -28,4 +28,18 @@ public class HomeController {
 	    modelAndView.setViewName("candidate");
 	    return modelAndView;
 	}
+	
+	@RequestMapping("/login")
+	public ModelAndView login() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("login");
+		return model;
+	}
+	
+	@RequestMapping("/ballot")
+	public ModelAndView ballot() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("ballot");
+		return model;
+	}
 }

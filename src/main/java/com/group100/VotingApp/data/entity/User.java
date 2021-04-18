@@ -9,13 +9,25 @@ import javax.persistence.OneToOne;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+
 @Entity
 public class User extends Person {
 	@OneToOne(cascade = { CascadeType.ALL })
+	@Valid
 	private Address address;
+	 @NotBlank(message = "can't be empty")
 	@Column(unique = true)
+	 @NotNull
+	 @NotBlank
 	private String username;
+	 @NotNull
+	 @NotBlank
 	private String password;
+	 @NotNull
+	 @NotBlank
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dob;
 

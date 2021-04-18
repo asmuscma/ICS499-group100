@@ -2,6 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
 <title>Registration</title>
+<style>
+.error{
+color red;
+
+}
+</style>
 <link rel="stylesheet"
 	href="vendors/owl-carousel/css/owl.carousel.min.css">
 <link rel="stylesheet"
@@ -46,11 +52,11 @@
 								<span class="mdi mdi-close navbar-toggler-icon pl-5"></span>
 							</button>
 						</li>
-						<li class="nav-item"><a class="nav-link" href="/index">Home
+						<li class="nav-item"><a class="nav-link" href="/">Home
 								<span class="sr-only">(current)</span>
 						</a></li>
 						<li class="nav-item"><a class="nav-link" href="/candidate">Candidates</a></li>
-						<li class="nav-item"><a class="nav-link" href="about.html">About</a>
+						<li class="nav-item"><a class="nav-link" href="/about">About</a>
 						</li>
 						<li class="nav-item btn-contact-us pl-4 pl-lg-0"><a
 							href=contact.html class="btn btn-info" data-toggle="modal">Contact
@@ -76,24 +82,29 @@
 								class="zmdi zmdi-account material-icons-name"></i></label> <input
 								type="text" th:field="*{fName}" name="firstName" id="firstname"
 								placeholder="first Name" />
+								<p th:if="${#fields.hasErrors('fName')}" th:errors="*{fName}" th:errorclass="error">Field can't be empty</p>
+								
 						</div>
 						<div class="form-group">
 							<label for="lastName"><i
 								class="zmdi zmdi-account material-icons-name"></i></label> <input
 								type="text" th:field="*{lName}" name="lastName" id="lastname"
 								placeholder="last Name" />
+								<p th:if="${#fields.hasErrors('lName')}" th:errors="*{lName}" th:errorclass="error">Field can't be empty</p>
 						</div>
 						<div class="form-group">
 							<label for="Street"><i
 								class="zmdi zmdi-account material-icons-name"></i></label> <input
 								type="text" th:field="*{Address.street}" name="street"
 								id="street" placeholder="Street" />
+								<p th:if="${#fields.hasErrors('Address.street')}" th:errors="*{Address.street}" th:errorclass="error">Field can't be empty</p>
 						</div>
 						<div class="form-group">
 							<label for="City"><i
 								class="zmdi zmdi-account material-icons-name"></i></label> <input
 								type="text" th:field="*{Address.city}" name="City" id="City"
 								placeholder="City" />
+								<p th:if="${#fields.hasErrors('Address.city')}" th:errors="*{Address.city}" th:errorclass="error">Field can't be empty</p>
 						</div>
 						<div class="form-group">
 							<label for="State"><i
@@ -154,29 +165,34 @@
 								<option value="WI">Wisconsin</option>
 								<option value="WY">Wyoming</option>
 							</select>
+							<p th:if="${#fields.hasErrors('Address.state')}" th:errors="*{Address.state}" th:errorclass="error">Field can't be empty</p>
 						</div>
 						<div class="form-group">
 							<label for="Zip"><i
 								class="zmdi zmdi-account material-icons-name"></i></label> <input
 								type="text" th:field="*{Address.zipcode}" name="Zip" id="Zip"
 								placeholder="Zip" />
+								<span th:if="${#fields.hasErrors('Address.zipcode')}" th:errors="*{Address.zipcode}" th:errorclass="error"></span></p>
 						</div>
 						<div class="form-group">
 							<label for="date"><i
 								class="zmdi zmdi-account material-icons-name"></i></label> <input
 								type="date" th:field="*{dob}" name="date" id="date" />
+								<p th:if="${#fields.hasErrors('dob')}" th:errors="*{dob}" th:errorclass="error">Field can't be empty</p>
 						</div>
 						<div class="form-group">
 							<label for="username"><i
 								class="zmdi zmdi-account material-icons-name"></i></label> <input
 								type="text" th:field="*{username}" name="username" id="username"
 								placeholder="userName" />
+								<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}" th:errorclass="error">Field can't be empty</p>
 						</div>
 
 						<div class="form-group">
 							<label for="pass"><i class="zmdi zmdi-lock"></i></label> <input
 								type="password" th:field="*{password}" name="pass" id="pass"
 								placeholder="Password" />
+								<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" th:errorclass="error">Field can't be empty</p>
 						</div>
 						<div class="form-group">
 							<label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
