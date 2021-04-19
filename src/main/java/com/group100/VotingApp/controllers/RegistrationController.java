@@ -32,22 +32,23 @@ public class RegistrationController {
 	 */
 
 	@GetMapping({ "/register" })
-	public String getRegister(@ModelAttribute("user") User user) {
-		return "/Registration";
+	public String getRegister(@ModelAttribute("User") User registeredUser) {
+		return "Registration";
 	}
 
 	@PostMapping("/register")
-	public String submitForm(@Valid @ModelAttribute("user") User user, BindingResult result, Model model) {
+	public String submitForm(@Valid @ModelAttribute("User") User X, BindingResult result, Model model) {
 		// save to DB 
+		userService.register(X);
 		
 		if(result.hasErrors())
 		{
-			return "/Registration";
+			return "Registration";
 		}
-		userService.register(user);
-		model.addAttribute("user", new User());
-	
+		model.addAttribute(X);
 		return "/login";
 	}
+
+    
 
 }
