@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Political Survey</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="https://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <style>
+    .slider {
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<div class="page-header">
+    <h1>Political Survey<br>
+    <small>A survey to match your political beliefs with your political party.</small></h1>
+</div>
+
+
+<!-- Survey start -->
+<form th:action="@{/createSurvey}" th:object="${Survey}" method="GET"> 
+<div class="container">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+
+	<!--Domestic Policy Issues-->
+	<div class="panel panel-default">
+		<div class="panel-heading" th:field="*{topic}" id="Domestic Policy">Domestic Policy Issues</div>
+		<div class="panel-body">
+			Should there be more restrictions on the current process of purchasing a gun?
+			<br />
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-default" style="width: 70px">
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
+				</label>
+				<label class="btn btn-default" style="width: 70px">
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
+				</label>
+			</div>
+			<br />
+			<br />
+
+			Should teachers be allowed to carry guns at school?
+			<br />
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-default" style="width: 70px">
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
+				</label>
+				<label class="btn btn-default" style="width: 70px">
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
+				</label>
+			</div>
+			<br />
+			<br />
+			
+			Should it be illegal to burn the American flag?
+			<br />
+			<div class="btn-group" data-toggle="buttons">
+				<label class="btn btn-default" style="width: 70px">
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
+				</label>
+				<label class="btn btn-default" style="width: 70px">
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
+				</label>
+			</div>
+			<br />
+			<br />
+		</div>
+	</div>
+			<br />
+			<br />
+		<label class="btn btn-default" style="width: 150px">
+			<input type="Submit"/>
+		</label>
+	</div>
+</div>
+</form>
+			
+			
+		
+			
+		
+<!-- you need to include the shieldui css and js assets in order for the components to work -->
+
+<script type="text/javascript" src="https://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+<script type="text/javascript">
+    jQuery(function ($) {
+        $('#rate1').shieldRating({
+            max: 7,
+            step: 0.1,
+            value: 0,
+            markPreset: false
+        });
+
+        $('#rate2').shieldRating({
+            max: 7,
+            step: 0.1,
+            value: 0,
+            markPreset: false
+        });
+
+        $('#rate3').shieldRating({
+            max: 7,
+            step: 0.1,
+            value: 0,
+            markPreset: false
+        });
+
+        var progress1 = $("#progress1").shieldProgressBar({
+            value: 50,
+            text: {
+                enabled: true,
+                template: "{0} %"
+            }
+        }).swidget();
+
+        var progress2 = $("#progress2").shieldProgressBar({
+            value: 50,
+            text: {
+                enabled: true,
+                template: "{0} %"
+            }
+        }).swidget();
+
+        var progress3 = $("#progress3").shieldProgressBar({
+            value: 50,
+            text: {
+                enabled: true,
+                template: "{0} %"
+            }
+        }).swidget();
+
+
+        $("#increase1").shieldButton({
+            events: {
+                click: function () {
+                    progress1.value(progress1.value() + 10);
+                }
+            }
+        });
+        $("#decrease1").shieldButton({
+            events: {
+                click: function () {
+                    progress1.value(progress1.value() - 10);
+                }
+            }
+        });
+
+        $("#increase2").shieldButton({
+            events: {
+                click: function () {
+                    progress2.value(progress2.value() + 10);
+                }
+            }
+        });
+        $("#decrease2").shieldButton({
+            events: {
+                click: function () {
+                    progress2.value(progress2.value() - 10);
+                }
+            }
+        });
+
+        $("#increase3").shieldButton({
+            events: {
+                click: function () {
+                    progress3.value(progress3.value() + 10);
+                }
+            }
+        });
+        $("#decrease3").shieldButton({
+            events: {
+                click: function () {
+                    progress3.value(progress3.value() - 10);
+                }
+            }
+        });
+    });
+</script>
+<!-- Survey - END -->
+
+</div>
+
+</body>
+</html>
