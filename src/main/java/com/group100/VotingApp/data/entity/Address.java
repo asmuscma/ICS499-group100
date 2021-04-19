@@ -7,33 +7,27 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotEmpty;
 
-import org.springframework.validation.annotation.Validated;
-
-import jakarta.validation.constraints.NotBlank;
-
-
-
 @Entity
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long addressId;
 	@NotEmpty
-	@NotBlank (message ="can't be empty")
+	@NotEmpty(message = "can't be empty")
 	@OneToOne
-	 @NotBlank
+	@NotEmpty
 	private User user;
 	@NotEmpty
-	 @NotBlank
+	@NotEmpty
 	private String street;
 	@NotEmpty
-	 @NotBlank
+	@NotEmpty
 	private String city;
 	@NotEmpty
-	 @NotBlank
+	@NotEmpty
 	private String state;
-	 @NotEmpty
-	 @NotBlank
+	@NotEmpty
+	@NotEmpty
 	private String zipcode;
 
 	public Address() {

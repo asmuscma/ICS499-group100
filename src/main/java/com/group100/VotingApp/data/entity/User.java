@@ -6,25 +6,23 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import jakarta.validation.constraints.NotBlank;
-
-import javax.validation.*;
+import javax.validation.Valid;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 public class User extends Person {
 	@OneToOne(cascade = { CascadeType.ALL })
 	@Valid
 	private Address address;
-	
+
 	@Column(unique = true)
-	 @NotNull
-	 @NotBlank
+	@NotNull
+	@NotEmpty
 	private String username;
-	@NotBlank
+	@NotEmpty
 	@NotNull
 	private String password;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
