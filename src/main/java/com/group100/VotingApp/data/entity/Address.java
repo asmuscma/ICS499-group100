@@ -12,21 +12,14 @@ public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long addressId;
-	@NotEmpty
-	@NotEmpty(message = "can't be empty")
 	@OneToOne
-	@NotEmpty
 	private User user;
-	@NotEmpty
 	@NotEmpty
 	private String street;
 	@NotEmpty
-	@NotEmpty
 	private String city;
 	@NotEmpty
-	@NotEmpty
 	private String state;
-	@NotEmpty
 	@NotEmpty
 	private String zipcode;
 

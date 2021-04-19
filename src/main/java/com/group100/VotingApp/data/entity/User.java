@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.OneToOne;
 import javax.validation.Valid;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -19,11 +18,9 @@ public class User extends Person {
 	private Address address;
 
 	@Column(unique = true)
-	@NotNull
 	@NotEmpty
 	private String username;
 	@NotEmpty
-	@NotNull
 	private String password;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dob;

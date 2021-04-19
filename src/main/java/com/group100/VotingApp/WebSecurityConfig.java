@@ -33,7 +33,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				.and()
 			.formLogin()
 				.loginPage("/login.html")
-				.loginProcessingUrl("login_process")
+				.defaultSuccessUrl("/user.html", true)
 				.failureUrl("/login.html?error=true")
 				.failureHandler(new AuthenticationFailureHandler() {
 					@Override
@@ -46,7 +46,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
 				.permitAll()
 				.and()
 			.logout()
-				.logoutUrl("/logout_process")
 				.deleteCookies("JSESSIONID")
 				.logoutSuccessHandler(new LogoutSuccessHandler() {
 					@Override
