@@ -27,7 +27,7 @@
 
 
 <!-- Survey start -->
-<form th:action="@{/createSurvey}" th:object="${Survey}" method="GET" action="survey1.html">
+<form th:action="@{/createSurvey}" th:object="${Survey}" method="GET">
 <div class="container">
     <div class="col-md-2">
     </div>
@@ -42,10 +42,10 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off"th:field="*{opinion}" value="Liberal"/> Yes
+					<input type="radio" autocomplete="off"th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
 				</label>
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative"/> No
+					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative" th:errorclass="error" /> No
 				</label>
 			</div>
 			<br />
@@ -55,10 +55,10 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> Yes
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
 				</label>
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> No
 				</label>
 			</div>
 			<br />
@@ -68,10 +68,10 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
+					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
 				</label>
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative"/> No
+					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative" th:errorclass="error" /> No
 				</label>
 			</div>
 			<br />
@@ -96,6 +96,7 @@
 <script type="text/javascript" src="https://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 
 <script type="text/javascript">
+	
     jQuery(function ($) {
         $('#rate1').shieldRating({
             max: 7,
