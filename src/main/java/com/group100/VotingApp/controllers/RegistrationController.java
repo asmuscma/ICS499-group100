@@ -18,32 +18,21 @@ public class RegistrationController {
 
 	@Autowired
 	private UserServiceImp userService;
-
-	/*
-	 * @GetMapping("/register") public String register(final Model model) {
-	 * model.addAttribute("user", new User()); return "/Registration"; }
-	 * 
-	 * @PostMapping("/register") public String
-	 * submitForm(@ModelAttribute("user") @Valid User user, BindingResult result) {
-	 * if(result.hasErrors()){ return "/Registration"; }
-	 * 
-	 * userService.register(user); return "/registration"; }
-	 */
-
+	
 	@GetMapping({ "/register" })
 	public String getRegister(@ModelAttribute("User") User registeredUser) {
 		return "Registration";
 	}
 
 	@PostMapping("/register")
-	public String submitForm(@Valid @ModelAttribute("User") User X, BindingResult result, Model model) {
+	public String submitForm(@Valid @ModelAttribute("User") User user, BindingResult result, Model model) {
 		// save to DB
-		userService.register(X);
+		userService.register(user);
 
 		if (result.hasErrors()) {
-			return "Registration";
+			return "/register";
 		}
-		model.addAttribute(X);
+		model.addAttribute(user);
 		return "/login";
 	}
 

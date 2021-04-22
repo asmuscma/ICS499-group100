@@ -29,12 +29,12 @@ public class HomeController {
 	    return modelAndView;
 	}
 	
-	@RequestMapping("/login")
+	/*@RequestMapping("/login")
 	public ModelAndView login() {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("login");
 		return model;
-	}
+	} */
 	
 	@RequestMapping("/ballot")
 	public ModelAndView ballot() {
@@ -48,5 +48,10 @@ public class HomeController {
 		ModelAndView model = new ModelAndView();
 		model.setViewName("survey1");
 		return model;
+	}
+	
+	@RequestMapping("/user")
+	public String user() {
+		return "user";
 	}
 }
