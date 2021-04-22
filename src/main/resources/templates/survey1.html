@@ -27,11 +27,7 @@
 
 
 <!-- Survey start -->
-<<<<<<< Updated upstream
-<form th:action="@{/createSurvey}" th:object="${Survey}" method="GET" action="survey2.html"> 
-=======
 <form action="#" th:action="@{/makesurvey1}" th:object="${survey}" method="Post"> 
->>>>>>> Stashed changes
 <div class="container">
     <div class="col-md-2">
     </div>
@@ -45,19 +41,12 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-<<<<<<< Updated upstream
 					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
 				</label>
 				<label class="btn btn-default" style="width: 70px">
 					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
-=======
 					<input type="radio" th:field="*{Issue.opinion}" name="Liberal"/>
 					<input type="hidden" id="education" th:field="{Issue.topic}" value="education">
-				</label>
-				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
-					<input type="hidden" id="education" th:field="{topic}" value="education">
->>>>>>> Stashed changes
 				</label>
 			</div>
 			<br />
@@ -67,19 +56,11 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-<<<<<<< Updated upstream
 					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Liberal" th:errorclass="error" /> Yes
 				</label>
 				<label class="btn btn-default" style="width: 70px">
 					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative" th:errorclass="error" /> No
-=======
-					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Liberal"/> Yes
-					<input type="hidden" id="education" th:field="{topic}" value="education">
-				</label>
-				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative"/> No
-					<input type="hidden" id="education" th:field="{topic}" value="education">
->>>>>>> Stashed changes
+
 				</label>
 			</div>
 			<br />
@@ -89,21 +70,13 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-<<<<<<< Updated upstream
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
-				</label>
-				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
-=======
 					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
 					<input type="hidden" id="education" th:field="{topic}" value="education">
 				</label>
 				<label class="btn btn-default" style="width: 70px">
 					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
 					<input type="hidden" id="education" th:field="{topic}" value="education">
->>>>>>> Stashed changes
-				</label>
-				
+				</label>		
 			</div>
 			<br />
 			<br />

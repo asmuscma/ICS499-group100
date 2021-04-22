@@ -12,7 +12,7 @@ public class LoginController {
 		return "login.html";
 	}
 	
-	@RequestMapping("/login.html?error")
+	@RequestMapping("/login?error")
 	public String loginError(Model model) {
 		model.addAttribute("loginError", true);
 		return "login.html";
