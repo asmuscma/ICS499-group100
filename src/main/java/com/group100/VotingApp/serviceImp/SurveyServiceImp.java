@@ -29,7 +29,7 @@ public class SurveyServiceImp implements SurveyService {
 		return false;
 	}
 	
-	public long getScore(User user) {
+/*	public long getScore(User user) {
 		List<Issue> issueList = new ArrayList<Issue>();
 		issueList = issueRepo.findByUser(user);
 		long score = 0;
@@ -39,4 +39,5 @@ public class SurveyServiceImp implements SurveyService {
 		}
 		return score;
 	}
+	*/
 }

@@ -14,19 +14,19 @@ import javax.persistence.ManyToOne;
 public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long issueId;
+	private String issueId;
 	@ManyToOne
 	private User user;
 	private String topic;
 	@ManyToOne
 	private Survey survey;
-	private long opinion;
+	private String opinion;
 
 	public Issue() {
 
 	}
 
-	public Issue(String topic, long opinion) {
+	public Issue(String topic, String opinion) {
 		this.topic = topic;
 		this.opinion = opinion;
 	}
@@ -39,11 +39,11 @@ public class Issue {
 		this.topic = topic;
 	}
 	
-	public long getIssueId() {
+	public String getIssueId() {
 		return issueId;
 	}
 
-	public void setIssueId(long issueId) {
+	public void setIssueId(String issueId) {
 		this.issueId = issueId;
 	}
 
@@ -55,11 +55,11 @@ public class Issue {
 		this.survey = survey;
 	}
 
-	public long getOpinion() {
+	public String getOpinion() {
 		return opinion;
 	}
 
-	public void setOpinion(long opinion) {
+	public void setOpinion(String opinion) {
 		this.opinion = opinion;
 	}
 }
