@@ -1,8 +1,8 @@
 package com.group100.VotingApp.serviceImp;
 
 import com.group100.VotingApp.data.entity.Candidate;
-import com.group100.VotingApp.data.entity.User;
 import com.group100.VotingApp.data.repository.BallotRepository;
+import com.group100.VotingApp.data.repository.RaceRepository;
 import com.group100.VotingApp.service.BallotService;
 
 import java.util.ArrayList;
@@ -18,10 +18,13 @@ public class BallotServiceImp implements BallotService {
 	
 	@Autowired
 	private BallotRepository ballotRepo;
+	
+	@Autowired
+	private RaceRepository raceRepo;
 
 	@Override
-	public boolean checkIfVoted(User user) {
-		if(ballotRepo.findByUser(user) != null) {
+	public boolean checkIfVoted(String username) {
+		if(ballotRepo.findByUser(username) != null) {
 			return true;
 		}
 		return false;
@@ -30,7 +33,7 @@ public class BallotServiceImp implements BallotService {
 	@Override
 	public Map<Candidate, Long> getResult(String office, String state) {
 		List<Candidate> voteList = new ArrayList<Candidate>();
-		voteList = ballotRepo.findByOfficeAndState(office, state);
+		voteList = raceRepo.findByOfficeAndState(office, state);
 		Map<Candidate, Long> freq = voteList.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
 		return freq;
 	}

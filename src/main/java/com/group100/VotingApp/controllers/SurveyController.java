@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.group100.VotingApp.data.entity.Survey;
-import com.group100.VotingApp.data.entity.User;
 import com.group100.VotingApp.data.repository.SurveyRepository;
 import com.group100.VotingApp.serviceImp.SurveyServiceImp;
 
