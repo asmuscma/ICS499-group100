@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="utf-8" />
     <title>Political Survey</title>
@@ -27,7 +27,7 @@
 
 
 <!-- Survey start -->
-<form action="#" th:action="@{/makesurvey1}" th:object="${survey}" method="Post"> 
+<form action="#" th:action="@{/makesurvey}" th:object="${Issue}" method="POST"> 
 <div class="container">
     <div class="col-md-2">
     </div>
@@ -41,12 +41,12 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					<input type="radio" th:field="*{opinion}" value="Liberal" name="opinion" id="opinion"/> Yes
+						<input type="hidden" id="education" th:field="*{topic}" value="education">
 				</label>
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
-					<input type="radio" th:field="*{Issue.opinion}" name="Liberal"/>
-					<input type="hidden" id="education" th:field="{Issue.topic}" value="education">
+					<input type="radio"th:field="*{opinion}" value="Conservative" name="conservative"  /> No
+					<input type="hidden" id="education" th:field="*{topic}" value="education">
 				</label>
 			</div>
 			<br />
@@ -56,11 +56,12 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Liberal" th:errorclass="error" /> Yes
+					<input type="radio" th:field="*{opinion}" value="Liberal" name="opinion"  id="opinion"/> Yes
+						<input type="hidden" id="education" th:field="*{topic}" value="education">
 				</label>
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative" th:errorclass="error" /> No
-
+				<input type="radio" th:field="*{opinion}" value="Conservative" name="opinion"  id="opinion"/> No
+				<input type="hidden" id="education" th:field="*{topic}" value="education">
 				</label>
 			</div>
 			<br />
@@ -70,12 +71,12 @@
 			<br />
 			<div class="btn-group" data-toggle="buttons">
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> Yes
-					<input type="hidden" id="education" th:field="{topic}" value="education">
+					<input type="radio" th:field="*{opinion}" value="Liberal" name="opinion" id="opinion"/> Yes
+					<input type="hidden" id="education" th:field="*{topic}" value="education">
 				</label>
 				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
-					<input type="hidden" id="education" th:field="{topic}" value="education">
+					<input type="radio" th:field="*{opinion}" value="Conservative" name="opinion" id="opinion"/> No
+					<input type="hidden" id="education" th:field="*{topic}" value="education">
 				</label>		
 			</div>
 			<br />

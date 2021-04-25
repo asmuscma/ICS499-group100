@@ -21,7 +21,7 @@
 
 
 <!-- Ballot start -->
-<form action='#' th:action="@{/ballot}" th:object="${ballot}" method= "POST">
+<form action='#' th:action="@{/ballot}" th:object="${Race}" method= "POST">
 <div class="container">
     <div class="col-md-2">
     </div>
@@ -34,10 +34,11 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}" value="Republican" id="President"/> Luke Carter / Kenya Healy <br/>(Republican)
+                        <input type="radio" th:field="*{candidate.party}" value="Republican" id="President"/> Luke Carter / Kenya Healy <br/>(Republican)
+                    	<input type="hidden" th:field="*{candidate.office}" value="President" id="President"/>
                     </label>
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}" value="Democrat" id="President"/> Nia Rudd / Alfie-Jay Lester <br/>(Democratic)
+                        <input type="radio" th:field="*{candidate.party}" value="Democrat" id="President"/> Nia Rudd / Alfie-Jay Lester <br/>(Democratic)
                     </label>
                 </div>
                 <br />
@@ -52,10 +53,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}" name="Republican" id="Senator1"/> Tahmina Bowler <br/>(Republican)
+                        <input type="radio" th:field="*{candidate.party}" value="Republican" id="Senator1"/> Tahmina Bowler <br/>(Republican)
                     </label>
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}" name="Democrat" id="Senator1"/> Regina Cruz <br/>(Democratic)
+                        <input type="radio" th:field="*{candidate.party}" value="Democrat" id="Senator1"/> Regina Cruz <br/>(Democratic)
                     </label>
                 </div>
                 <br />
@@ -70,10 +71,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}"name="Republican" id="Governor"/> Aidan Webb <br/>(Republican)
+                        <input type="radio" th:field="*{candidate.party}"value="Republican" id="Governor"/> Aidan Webb <br/>(Republican)
                     </label>
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}"name="Democrat" id="Governor"/> Sabina Richmond <br/>(Democratic)
+                        <input type="radio" th:field="*{candidate.party}"value="Democrat" id="Governor"/> Sabina Richmond <br/>(Democratic)
                     </label>
                 </div>
                 <br />
@@ -88,10 +89,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" th:field="*{candidate.party}" autocomplete="off" name="Republican" id="Senator2"/> Ameer Rankin <br/>(Republican)
+                        <input type="radio" th:field="*{candidate.party}" value="Republican" id="Senator2"/> Ameer Rankin <br/>(Republican)
                     </label>
                     <label class="btn btn-default">
-                        <input type="radio" th:field="*{party}"autocomplete="off" name="Democrat" id="Senator2"/> Kelsea Kirby <br/>(Democratic)
+                        <input type="radio" th:field="*{candidate.party}" value="Democrat" id="Senator2"/> Kelsea Kirby <br/>(Democratic)
                     </label>
                 </div>
                 <br />
@@ -106,10 +107,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}" name="Republican" id="District Attorney"/> Gloria Perez <br/>(Republican)
+                        <input type="radio" th:field="*{candidate.party}" value="Republican" id="District Attorney"/> Gloria Perez <br/>(Republican)
                     </label>
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}" name="Democart" id="District Attorney"/> Kian Chung <br/>(Democratic)
+                        <input type="radio" th:field="*{candidate.party}" value="Democart" id="District Attorney"/> Kian Chung <br/>(Democratic)
                     </label>
                 </div>
                 <br />
@@ -124,10 +125,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" name="Republican" th:field="*{candidate.party}" id="ATT General"/> Ellie-Mae Prince <br/>(Republican)
+                        <input type="radio" value="Republican" th:field="*{candidate.party}" id="ATT General"/> Ellie-Mae Prince <br/>(Republican)
                     </label>
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" name="Democart" th:field="*{candidate.party}" id="ATT General"/> Hugh Edmonds <br/>(Democratic)
+                        <input type="radio" value="Democart" th:field="*{candidate.party}" id="ATT General"/> Hugh Edmonds <br/>(Democratic)
                     </label>
                 </div>
                 <br />
@@ -142,10 +143,10 @@
                 <br />
                 <div class="btn-group" data-toggle="buttons">
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}" name="Republican" id="Treasurer"/> Alasdair Ochoa <br/>(Republican)
+                        <input type="radio" th:field="*{candidate.party}" value="Republican" id="Treasurer"/> Alasdair Ochoa <br/>(Republican)
                     </label>
                     <label class="btn btn-default">
-                        <input type="radio" autocomplete="off" th:field="*{candidate.party}" name="Democart" id="Treasurer"/> Kimberly Chamberlain <br/>(Democratic)
+                        <input type="radio" th:field="*{candidate.party}" value="Democart" id="Treasurer"/> Kimberly Chamberlain <br/>(Democratic)
                     </label>
                 </div>
                 <br />

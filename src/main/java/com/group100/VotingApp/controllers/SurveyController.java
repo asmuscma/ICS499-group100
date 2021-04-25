@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.group100.VotingApp.data.entity.Issue;
 import com.group100.VotingApp.data.entity.Survey;
 import com.group100.VotingApp.data.repository.SurveyRepository;
 import com.group100.VotingApp.serviceImp.SurveyServiceImp;
@@ -46,25 +47,29 @@ public class SurveyController {
 		}
 		return null;
 	}
-	
+	/*
 	@GetMapping("/createSurvey")
 		public String createSurvey(Model model) {
 		model.addAttribute("Survey", new Survey());
 		return "createSurvey";
 	}
-	@GetMapping({ "/makesurvey1" })
-	public String getSurvey(@ModelAttribute("survey") Survey X) {
+	*/
+	
+	@GetMapping("/makesurvey")
+	public String getSurvey(Model model) {
+		model.addAttribute("Issue", new Issue());
 		return "survey1";
 	}
-	@PostMapping("/makesurvey1")
-	public String surveyForm(@Valid @ModelAttribute("survey") Survey X, BindingResult result, Model model) {
-		// save to DB
+	@PostMapping("/makesurvey")
+	public String surveyForm(@ModelAttribute("Issue")Issue iss, BindingResult result, Model model) {
+		
 		if (result.hasErrors()) {
 			return "survey1";
 		}
-		model.addAttribute(X);
+		model.addAttribute("Issue", iss);
 		return "/survey2";
 	}
+	
 		
 	
 	

@@ -21,6 +21,13 @@ public class SurveyServiceImp implements SurveyService {
 	@Autowired
 	private IssueRepository issueRepo;
 	
+	
+	@Override
+	public void submitSurvey(Issue iss) {
+		issueRepo.save(iss);
+	}
+	
+	
 	@Override
 	public boolean checkIfVoted(User user) {
 		if(surveyRepo.findByUser(user) != null) {
@@ -28,6 +35,7 @@ public class SurveyServiceImp implements SurveyService {
 		}
 		return false;
 	}
+	
 	
 /*	public long getScore(User user) {
 		List<Issue> issueList = new ArrayList<Issue>();

@@ -42,6 +42,12 @@ public class HomeController {
 		model.setViewName("ballot");
 		return model;
 	}
+	@RequestMapping("/survey0")
+	public ModelAndView survey0() {
+		ModelAndView model = new ModelAndView();
+		model.setViewName("survey0");
+		return model;
+	}
 	
 	@RequestMapping("/survey1")
 	public ModelAndView survey1() {
