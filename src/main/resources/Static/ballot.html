@@ -21,7 +21,11 @@
 
 
 <!-- Ballot start -->
+<<<<<<< Updated upstream:src/main/resources/Static/ballot.html
 <form th:action="@{/Ballot/add}" th:object="${ballot}" method= "POST">
+=======
+<form action='#' th:action="@{/makeballot}" th:object="${ballot}" method= "POST">
+>>>>>>> Stashed changes:src/main/resources/templates/ballot.html
 <div class="container">
     <div class="col-md-2">
     </div>
@@ -279,7 +283,7 @@
     });
 </script>
 
-<style>
+<style type="text/css">
     .slider {
         width: 100%;
     }

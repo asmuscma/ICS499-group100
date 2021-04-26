@@ -16,12 +16,12 @@ import com.group100.VotingApp.data.repository.SurveyRepository;
 import com.group100.VotingApp.serviceImp.SurveyServiceImp;
 
 @RestController
-@RequestMapping("/surveys")
+@RequestMapping("/survey")
 public class SurveyController {
 
 	@Autowired
 	private SurveyRepository surveyRepo;
-	
+
 	@Autowired
 	private SurveyServiceImp surveyServiceImp;
 
@@ -37,11 +37,12 @@ public class SurveyController {
 
 	@PostMapping("/add")
 	public Survey create(@RequestBody final Survey survey) {
-		if(!surveyServiceImp.checkIfVoted(survey.getUser())) {
+		if (!surveyServiceImp.checkIfVoted(survey.getUser())) {
 			return surveyRepo.saveAndFlush(survey);
 		}
 		return null;
 	}
+<<<<<<< Updated upstream
 	
 	@GetMapping("/createSurvey")
 		public String createSurvey(Model model) {
@@ -53,4 +54,27 @@ public class SurveyController {
 		
 	
 	
+=======
+	/*
+	 * @GetMapping("/createSurvey") public String createSurvey(Model model) {
+	 * model.addAttribute("Survey", new Survey()); return "createSurvey"; }
+	 */
+
+	@GetMapping("/makesurvey")
+	public String getSurvey(Model model) {
+		model.addAttribute("Issue", new Issue());
+		return "survey1";
+	}
+
+	@PostMapping("/makesurvey")
+	public String surveyForm(@ModelAttribute("Issue") Issue iss, BindingResult result, Model model) {
+
+		if (result.hasErrors()) {
+			return "survey1";
+		}
+		model.addAttribute("Issue", iss);
+		return "/survey2";
+	}
+
+>>>>>>> Stashed changes
 }

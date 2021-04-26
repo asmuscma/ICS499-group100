@@ -1,5 +1,7 @@
 package com.group100.VotingApp.data.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,7 +13,7 @@ import javax.persistence.ManyToOne;
  * candidates, and parties will have different opinions on.
  */
 @Entity
-public class Issue {
+public class Issue implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long issueId;
@@ -39,8 +41,13 @@ public class Issue {
 	public void setTopic(String topic) {
 		this.topic = topic;
 	}
+<<<<<<< Updated upstream
 	
 	public long getIssueId() {
+=======
+
+	public String getIssueId() {
+>>>>>>> Stashed changes
 		return issueId;
 	}
 
