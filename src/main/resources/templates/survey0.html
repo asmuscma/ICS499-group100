@@ -31,7 +31,7 @@
 
 
 		<!-- Survey start -->
-		<form th:action="@{/makeSurvey0}" th:object="${issue}" method="GET">
+		<form th:action="@{/makesurvey0}" th:object="${issue}" method="POST">
 			<div class="container">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
@@ -46,22 +46,22 @@
 							social and community based programs? <br /> <select
 								name="opinion">
 								<option
-									th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
-									th:value="${op}" th:text="${op.displayValue}"></option>
+									th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+									th:value="${op}" th:text="${op.opinion}"></option>
 							</select> <br /> <br /> 
 							Should police departments be allowed to use
 							military grade equipment? <br />
 							<select name="opinion">
 									<option
-										th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
-										th:value="${op}" th:text="${op.displayValue}"></option>
+										th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+										th:value="${op}" th:text="${op.opinion}"></option>
 								</select>
 							<br /> <br /> Should convicted criminals have the right to
 							vote? <br />
 							<select name="opinion">
 									<option
-										th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
-										th:value="${op}" th:text="${op.displayValue}"></option>
+										th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+										th:value="${op}" th:text="${op.opinion}"></option>
 								</select>
 							<br /> <br />
 						</div>

@@ -46,23 +46,23 @@
 							<div class="btn-group" data-toggle="buttons">
 								<select name="opinion">
 									<option
-										th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
-										th:value="${op}" th:text="${op.displayValue}"></option>
+										th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+										th:value="${op}" th:text="${op.opinion}"></option>
 								</select>
 							</div>
 							<br /> <br /> Should the federal government pay for tuition at
 							four-year colleges and universities? <br />
 							<select name="opinion">
 									<option
-										th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
-										th:value="${op}" th:text="${op.displayValue}"></option>
+										th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+										th:value="${op}" th:text="${op.opinion}"></option>
 								</select>
 							<br /> <br /> Should critical race theory be taught in K-12
 							education? <br />
 							<select name="opinion">
 									<option
-										th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
-										th:value="${op}" th:text="${op.displayValue}"></option>
+										th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+										th:value="${op}" th:text="${op.opinion}"></option>
 								</select>
 							</div>
 							<br /> <br />
