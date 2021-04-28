@@ -7,22 +7,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 import java.util.List;
 import java.util.ArrayList;
-import java.util.stream.*;
 
 @Entity
 public class Survey {
-	
-	
-	public enum topic {
-		education, criminal, environment, domestic, foreign, health
-	}
-	
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long surveyId;
