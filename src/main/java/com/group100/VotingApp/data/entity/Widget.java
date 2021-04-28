@@ -1,4 +1,4 @@
-package com.group100.VotingApp.data.enums;
+package com.group100.VotingApp.data.entity;
 
 public class Widget {
 private String topic;

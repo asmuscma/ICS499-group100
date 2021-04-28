@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +18,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.group100.VotingApp.data.entity.Issue;
 import com.group100.VotingApp.data.entity.Survey;
+import com.group100.VotingApp.data.entity.Widget;
 import com.group100.VotingApp.data.repository.SurveyRepository;
 import com.group100.VotingApp.serviceImp.SurveyServiceImp;
 
-@RestController
-@RequestMapping("/surveys")
+@Controller
 public class SurveyController {
 
 	@Autowired
@@ -54,21 +55,28 @@ public class SurveyController {
 		return "createSurvey";
 	}
 	*/
+	 @GetMapping("/makesurvey0")
+	    public String addsurvey0(@ModelAttribute Issue issue) {
+	        return "survey0";
+	    }
+	 
+	   @PostMapping("/makesurvey0")
+	    public String savesurvey0(@Valid Issue issue, Model model) {
+	        model.addAttribute("issue", issue);
+	        return "survey1";
+	   }
 	
-	@GetMapping("/makesurvey")
-	public String getSurvey(Model model) {
-		model.addAttribute("Issue", new Issue());
-		return "survey1";
-	}
-	@PostMapping("/makesurvey")
-	public String surveyForm(@ModelAttribute("Issue")Issue iss, BindingResult result, Model model) {
-		
-		if (result.hasErrors()) {
-			return "survey1";
-		}
-		model.addAttribute("Issue", iss);
-		return "/survey2";
-	}
+	 @GetMapping("/makesurvey1")
+	    public String addsurvey1(@ModelAttribute Issue issue) {
+	        return "survey1";
+	    }
+	 
+	   @PostMapping("/makesurvey1")
+	    public String savesurvey1(@Valid Issue issue, Model model) {
+	        model.addAttribute("issue", issue);
+	        return "survey2";
+	   }
+	
 	
 		
 	

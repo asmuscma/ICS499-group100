@@ -43,17 +43,18 @@ public class HomeController {
 		return model;
 	}
 	@RequestMapping("/survey0")
-	public ModelAndView survey0() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("survey0");
-		return model;
+	public String survey0() {
+		return "survey0";
 	}
 	
 	@RequestMapping("/survey1")
-	public ModelAndView survey1() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("survey1");
-		return model;
+	public String survey1() {
+		return "survey1";
+	}
+	
+	@RequestMapping("/enumForm")
+	public String enumForm() {
+		return "enumForm";
 	}
 	
 	@RequestMapping("/user")

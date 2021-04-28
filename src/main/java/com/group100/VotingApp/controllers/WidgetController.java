@@ -1,23 +1,27 @@
-package com.group100.VotingApp.data.enums;
+package com.group100.VotingApp.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.group100.VotingApp.data.entity.Widget;
 
 import jakarta.validation.Valid;
 
+
 @Controller
-public class widgetController {
+public class WidgetController {
     @GetMapping("/widget/add")
     public String addWidget(@ModelAttribute Widget widget) {
-        return "enums/new";
+        return "enumForm";
     }
     
     @PostMapping("/widget/add")
     public String saveWidget(@Valid Widget widget, Model model) {
         model.addAttribute("widget", widget);
-        return "enums/view";
+        return "enumForm";
     }
 }

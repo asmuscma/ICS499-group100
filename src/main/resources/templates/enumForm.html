@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+<meta charset="ISO-8859-1">
+<title>example</title>
+</head>
+<body>
+  <h1>Political Survey</h1>
+  <br>
+<form th:action="@{/widget/add}" method="post" th:object="${widget}">
+<p>	Should funding for local police departments be redirected to social and community based programs?</p>
+<select name="opinion">
+<option th:each= "op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"   th:value="${op}" th:text="${op.displayValue}"></option>
+</select>
+<br>
+  <input type="submit" value="Submit" />
+</form>
+</body>
+</html>

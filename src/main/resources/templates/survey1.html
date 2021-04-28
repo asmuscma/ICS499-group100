@@ -1,106 +1,87 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>Political Survey</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="utf-8" />
+<title>Political Survey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="https://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
-    <script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
-    <style>
-    .slider {
-        width: 100%;
-    }
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="https://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<style>
+.slider {
+	width: 100%;
+}
 </style>
 </head>
 <body>
 
-<div class="container">
+	<div class="container">
 
-<div class="page-header">
-    <h1>Political Survey<br>
-    <small>A survey to match your political beliefs with your political party.</small></h1>
-</div>
-
-
-<!-- Survey start -->
-<form action="#" th:action="@{/makesurvey}" th:object="${Issue}" method="POST"> 
-<div class="container">
-    <div class="col-md-2">
-    </div>
-    <div class="col-md-8">
-	
-	<!--Education Issues-->
-	<div class="panel panel-default">
-		<div class="panel-heading">Education Issues</div>
-		<div class="panel-body">
-			Do you support increasing taxes for the rich in order to reduce interest rates for student loans?
-			<br />
-			<div class="btn-group" data-toggle="buttons">
-				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" th:field="*{opinion}" value="Liberal" name="opinion" id="opinion"/> Yes
-						<input type="hidden" id="education" th:field="*{topic}" value="education">
-				</label>
-				<label class="btn btn-default" style="width: 70px">
-					<input type="radio"th:field="*{opinion}" value="Conservative" name="conservative"  /> No
-					<input type="hidden" id="education" th:field="*{topic}" value="education">
-				</label>
-			</div>
-			<br />
-			<br />
-
-			Should the federal government pay for tuition at four-year colleges and universities?
-			<br />
-			<div class="btn-group" data-toggle="buttons">
-				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" th:field="*{opinion}" value="Liberal" name="opinion"  id="opinion"/> Yes
-						<input type="hidden" id="education" th:field="*{topic}" value="education">
-				</label>
-				<label class="btn btn-default" style="width: 70px">
-				<input type="radio" th:field="*{opinion}" value="Conservative" name="opinion"  id="opinion"/> No
-				<input type="hidden" id="education" th:field="*{topic}" value="education">
-				</label>
-			</div>
-			<br />
-			<br />
-			
-			Should critical race theory be taught in K-12 education?
-			<br />
-			<div class="btn-group" data-toggle="buttons">
-				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" th:field="*{opinion}" value="Liberal" name="opinion" id="opinion"/> Yes
-					<input type="hidden" id="education" th:field="*{topic}" value="education">
-				</label>
-				<label class="btn btn-default" style="width: 70px">
-					<input type="radio" th:field="*{opinion}" value="Conservative" name="opinion" id="opinion"/> No
-					<input type="hidden" id="education" th:field="*{topic}" value="education">
-				</label>		
-			</div>
-			<br />
-			<br />
+		<div class="page-header">
+			<h1>
+				Political Survey<br> <small>A survey to match your
+					political beliefs with your political party.</small>
+			</h1>
 		</div>
-	</div>
-			<br />
-			<br />
-		<label class="btn btn-default" style="width: 150px">
-			<input type="Submit"/>
-		</label>
-	</div>
-</div>
-</form>
-			
-			
-		
-			
-		
-<!-- you need to include the shieldui css and js assets in order for the components to work -->
 
-<script type="text/javascript" src="https://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 
-<script type="text/javascript">
+		<!-- Survey start -->
+		<form action="#" th:action="@{/makesurvey1}" th:object="${issue}"
+			method="POST">
+			
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+
+					<!--Education Issues-->
+					<div class="panel panel-default">
+						<div class="panel-heading">Education Issues</div>
+						<div class="panel-body">
+							Do you support increasing taxes for the rich in order to reduce
+							interest rates for student loans? <br />
+							<div class="btn-group" data-toggle="buttons">
+								<select name="opinion">
+									<option
+										th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
+										th:value="${op}" th:text="${op.displayValue}"></option>
+								</select>
+							</div>
+							<br /> <br /> Should the federal government pay for tuition at
+							four-year colleges and universities? <br />
+							<select name="opinion">
+									<option
+										th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
+										th:value="${op}" th:text="${op.displayValue}"></option>
+								</select>
+							<br /> <br /> Should critical race theory be taught in K-12
+							education? <br />
+							<select name="opinion">
+									<option
+										th:each="op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"
+										th:value="${op}" th:text="${op.displayValue}"></option>
+								</select>
+							</div>
+							<br /> <br />
+						<input type="Submit" />
+					
+				</div>
+			</div>
+		</form>
+
+
+
+
+
+		<!-- you need to include the shieldui css and js assets in order for the components to work -->
+
+		<script type="text/javascript"
+			src="https://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
+
+		<script type="text/javascript">
     jQuery(function ($) {
         $('#rate1').shieldRating({
             max: 7,
@@ -194,9 +175,9 @@
         });
     });
 </script>
-<!-- Survey - END -->
+		<!-- Survey - END -->
 
-</div>
+	</div>
 
 </body>
 </html>
