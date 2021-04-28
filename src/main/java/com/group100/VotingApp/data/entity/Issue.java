@@ -17,25 +17,25 @@ public class Issue {
 	private String issueId;
 	@ManyToOne
 	private User user;
-	private String topic;
+	
 	@ManyToOne
 	private Survey survey;
-	private String opinion;
-
+	private enumTopicType topic;
+	private enumOpinionType opinion;
 	public Issue() {
 
 	}
 
-	public Issue(String topic, String opinion) {
+	public Issue(enumTopicType topic, enumOpinionType opinion) {
 		this.topic = topic;
 		this.opinion = opinion;
 	}
 
-	public String getTopic() {
+	public enumTopicType getTopic() {
 		return topic;
 	}
 
-	public void setTopic(String topic) {
+	public void setTopic(enumTopicType topic) {
 		this.topic = topic;
 	}
 	
@@ -55,11 +55,11 @@ public class Issue {
 		this.survey = survey;
 	}
 
-	public String getOpinion() {
+	public enumOpinionType getOpinion() {
 		return opinion;
 	}
 
-	public void setOpinion(String opinion) {
+	public void setOpinion(enumOpinionType opinion) {
 		this.opinion = opinion;
 	}
 }

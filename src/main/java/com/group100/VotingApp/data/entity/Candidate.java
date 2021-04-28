@@ -8,6 +8,7 @@ public class Candidate extends Person {
 	private String office;
 	private String state;
 	
+	public enum 
 	public Candidate() {
 		
 	}
