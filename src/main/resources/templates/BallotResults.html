@@ -63,20 +63,18 @@
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#header-section">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="about.html">About</a>
+            <a class="nav-link" href="/about">About</a>
           </li>
-          <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-            <a href=contact.html class="btn btn-info" data-toggle="modal">Contact Us </a>
-           </li>
-           
-           <li>
-            <a href="Llgin.html">Login</a>
-            <br>
-            <a href="registration.html">Register</a>
+           <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+            </li>
+			<li class="nav-item">
+			<a class="nav-link" href="/register">Register</a>
           </li>
+		  <span>[[${#request.remoteUser}]]</span>
         </ul>
       </div>
     </div> 

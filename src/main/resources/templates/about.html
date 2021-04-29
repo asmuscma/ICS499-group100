@@ -32,20 +32,18 @@
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
           </li>
-          <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-            <a href=contact.html class="btn btn-info" data-toggle="modal">Contact Us </a>
-           </li>
-           
-           <li>
-            <a href="/login">Login</a>
-            <br>
-            <a href="/registration">Register</a>
+           <li class="nav-item">
+            <a class="nav-link" href="login">Login</a>
+            </li>
+			<li class="nav-item">
+			<a class="nav-link" href="/register">Register</a>
           </li>
+		  <span>[[${#request.remoteUser}]]</span>
         </ul>
       </div>
     </div> 
@@ -58,16 +56,14 @@
     </div>
   </div>
   <section>
-       <div class="about">
-		<p>
-		<h2>Hi we're a small organization 
-			that wanted to simulate how big of a 
-			difference you can make with a vote
-		</h2>
-		<h3>By participating you're illustrating to the world why your vote matters</h3>
-		<h4>This application is only for simulation purposes this is by no means connected to a federal or state organization</h4>
-	 </div>
-     </section>
+    <div class="container">
+		<h4>Hi we're a small organization that wanted to simulate how big of a difference you can make with a vote</h4><br>
+		<h4>By participating you're illustrating to the world why your vote matters</h4><br>
+		<small>This application was created by Colin Asmus, Warsame Guled, Xang Lee, and Zion Tran for our ICS 499-02 Software Engineering and Capstone Project led by Professor Zakaria Baani in the Spring 2021 semester.</small><br><br>
+		<small>This application is only for simulation purposes this is by no means connected to a federal or state organization. </small>
+
+	</div>
+    </section>
     
   <script src="vendors/jquery/jquery.min.js"></script>
   <script src="vendors/bootstrap/bootstrap.min.js"></script>

@@ -34,25 +34,23 @@ xmlns:th="http://www.thymeleaf.org">
             </button>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="/">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/about">About</a>
           </li>
-          <li class="nav-item btn-contact-us pl-4 pl-lg-0">
-            <a href=contact.html class="btn btn-info" data-toggle="modal">Contact Us </a>
-           </li>
-           
-           <li>
-            <a href="/login">Login</a>
-            <br>
-            <a href="/register">Register</a>
+           <li class="nav-item">
+            <a class="nav-link" href="/login">Login</a>
+            </li>
+			<li class="nav-item">
+			<a class="nav-link" href="/register">Register</a>
           </li>
-          </ul>
-          </div>
-          </div>
-          </nav>
-         </header>
+		  <span>[[${#request.remoteUser}]]</span>
+        </ul>
+       </div>
+     </div>
+	</nav>
+  </header>
 <!-- Sing in  Form -->
 <section class="sign-in">
     <div class="container">
