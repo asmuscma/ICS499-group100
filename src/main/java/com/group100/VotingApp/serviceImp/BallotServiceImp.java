@@ -1,14 +1,7 @@
 package com.group100.VotingApp.serviceImp;
 
-import com.group100.VotingApp.data.entity.Candidate;
 import com.group100.VotingApp.data.repository.BallotRepository;
-import com.group100.VotingApp.data.repository.RaceRepository;
 import com.group100.VotingApp.service.BallotService;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -18,9 +11,6 @@ public class BallotServiceImp implements BallotService {
 	
 	@Autowired
 	private BallotRepository ballotRepo;
-	
-	@Autowired
-	private RaceRepository raceRepo;
 
 	@Override
 	public boolean checkIfVoted(String username) {
@@ -31,10 +21,8 @@ public class BallotServiceImp implements BallotService {
 	}
 
 	@Override
-	public Map<Candidate, Long> getResult(String office, String state) {
-		List<Candidate> voteList = new ArrayList<Candidate>();
-		voteList = raceRepo.findByOfficeAndState(office, state);
-		Map<Candidate, Long> freq = voteList.stream().collect(Collectors.groupingBy(w -> w, Collectors.counting()));
-		return freq;
+	public long getResult(String office) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }
