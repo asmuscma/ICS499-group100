@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.group100.VotingApp.enums.CandidateName;
+import com.group100.VotingApp.enums.CandidateOffice;
 
 @Entity
 public class Ballot {
@@ -21,6 +22,8 @@ public class Ballot {
 	private String office;
 	@Enumerated(EnumType.STRING)
 	private CandidateName candidateName;
+	@Enumerated(EnumType.STRING)
+	private CandidateOffice candidateOffice;
 
 	public Ballot() {
 

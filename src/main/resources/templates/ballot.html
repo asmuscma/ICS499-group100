@@ -38,9 +38,9 @@
             name="candidate">
             <option
             th:each="can : ${T(com.group100.VotingApp.enums.CandidateName).values()}"
-            th:value="${can}" th:text="${can.candidateName}"></option>
+            th:value="${can}" th:text="${can.name}"></option>
             </select> <br /> <br />
-            <input type="hidden" th:text="President / Vice-President" th:attr="name='office'">
+            <input type="hidden" th:value="${T(com.group100.VotingApp.enums.CandidateOffice).PRESIDENT}" th:attr="name='office'">
              </div>      
                
 </div>

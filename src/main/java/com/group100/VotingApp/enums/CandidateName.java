@@ -1,7 +1,7 @@
 package com.group100.VotingApp.enums;
 
 public enum CandidateName {
-	JOHN("John"), JANE("JANE"), ADAM("ADAM");
+	JOHN("John"), JANE("Jane"), ADAM("Adam");
 
 	private String name;
 
