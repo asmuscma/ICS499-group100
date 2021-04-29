@@ -30,8 +30,8 @@
 		</div>
 
 
-		<!-- Survey start -->
-		<form th:action="@{/makesurvey0}" th:object="${issue}" method="POST">
+<!-- Survey start -->
+<form th:action="@{/makesurvey0}" th:object="${issue}" method="POST">
 			<div class="container">
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
@@ -100,7 +100,7 @@
 			
 		<!--Enviormental Issues-->
 		<div class="panel panel-default">
-			<div class="panel-heading" th:field="*{topic}" id="environmental">Enviormental Issues</div>
+			<div class="panel-heading">Enviormental Issues</div>
 			<div class="panel-body">
 				Should the government increase environmental regulations to prevent climate change?
 				<br />
@@ -139,7 +139,7 @@
 		
 		<!--Electoral Issues-->
 		<div class="panel panel-default">
-			<div class="panel-heading" th:field="*{topic}" id="electoral">Electoral Issues</div>
+			<div class="panel-heading">Electoral Issues</div>
 			<div class="panel-body">
 				Should the electoral college be abolished?
 				<br />
@@ -178,7 +178,7 @@
 		
 		<!--Domestic Policy Issues-->
 		<div class="panel panel-default">
-			<div class="panel-heading" th:field="*{topic}" id="Domestic Policy">Domestic Policy Issues</div>
+			<div class="panel-heading">Domestic Policy Issues</div>
 			<div class="panel-body">
 				Should there be more restrictions on the current process of purchasing a gun?
 				<br />
@@ -217,7 +217,7 @@
 
 		<!--Foreign Policy Issues-->
 		<div class="panel panel-default">
-			<div class="panel-heading" th:field="*{topic}" id="Foreign Policy">Foreign Policy Issues</div>
+			<div class="panel-heading">Foreign Policy Issues</div>
 			<div class="panel-body">
 				Should the government increase military spending?
 				<br />
@@ -256,7 +256,7 @@
 		
 		<!--Social Issues-->
 		<div class="panel panel-default">
-			<div class="panel-heading" th:field="*{topic}" id="Social">Social Issues</div>
+			<div class="panel-heading">Social Issues</div>
 			<div class="panel-body">
 				Should the government continue to fund Planned Parenthood?
 				<br />
@@ -295,7 +295,7 @@
 
 		<!--Healthcare Issues-->
 		<div class="panel panel-default">
-			<div class="panel-heading" th:field="*{topic}" id="Healthcare">Healthcare Issues</div>
+			<div class="panel-heading">Healthcare Issues</div>
 			<div class="panel-body">
 				Should the federal government increase funding of health care for low income individuals (Medicaid)?
 				<br />
@@ -334,7 +334,7 @@
 				<br /> <input type="submit" value="Continue Survey" />
 				</div>
 			</div>
-		</form>
+</form>
 
 
 
