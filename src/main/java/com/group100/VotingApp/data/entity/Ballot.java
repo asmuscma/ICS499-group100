@@ -1,12 +1,14 @@
 package com.group100.VotingApp.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import com.group100.VotingApp.enums.CandidateEnum;
+import com.group100.VotingApp.enums.CandidateName;
 
 @Entity
 public class Ballot {
@@ -15,9 +17,11 @@ public class Ballot {
 	private long ballotId;
 	@ManyToOne
 	private User user;
-	private CandidateEnum candidate;
-	
-	
+
+	private String office;
+	@Enumerated(EnumType.STRING)
+	private CandidateName candidateName;
+
 	public Ballot() {
 
 	}
@@ -38,15 +42,20 @@ public class Ballot {
 		this.user = user;
 	}
 
-	public CandidateEnum getCandidate() {
-		return candidate;
+	public CandidateName getCandidateName() {
+		return candidateName;
 	}
 
-	public void setCandidate(CandidateEnum candidate) {
-		this.candidate = candidate;
+	public void setCandidateName(CandidateName candidateName) {
+		this.candidateName = candidateName;
 	}
 
+	public String getCandidateOffice() {
+		return office;
+	}
 
-
+	public void setCandidateOffice(String candidateOffice) {
+		this.office = candidateOffice;
+	}
 
 }
