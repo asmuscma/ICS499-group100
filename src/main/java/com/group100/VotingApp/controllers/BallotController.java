@@ -2,7 +2,10 @@ package com.group100.VotingApp.controllers;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,5 +43,17 @@ public class BallotController {
 			return ballotRepo.saveAndFlush(ballot);
 		}
 		return null;
+	}
+	
+	@GetMapping("/ballot")
+	public String ballot() {
+		return "ballot";
+	}
+	
+	@PostMapping("/sendballot")
+	public String sendballot(@Valid Ballot ballot, Model model) {
+		ballotRepo.saveAndFlush(ballot);
+		model.addAttribute(ballot);
+		return "sendballot";
 	}
 }
