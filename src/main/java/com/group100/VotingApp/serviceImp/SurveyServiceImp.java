@@ -1,5 +1,6 @@
 package com.group100.VotingApp.serviceImp;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,12 +44,17 @@ public class SurveyServiceImp implements SurveyService {
 		List<Survey> response = (List<Survey>)surveyRepo.findAll();
 		return response;
 	}
-
-	/*
-	 * public long getScore(User user) { List<Survey> surveyList = new
-	 * ArrayList<Survey>(); surveyList = surveyRepo.findByUser(user); long score = 0;
-	 * 
-	 * for(int i = 0; i < surveyList.size(); i++) { score +=
-	 * surveyList.get(i).getOpinion(); } return score; }
-	 */
+	
+	public long getTopicScore(User user, String topic) {
+		List<Survey> surveyList = new ArrayList<Survey>();
+		surveyList = surveyRepo.findByUserAndTopic(user, topic);
+		long score = 0;
+		
+		for(int i = 0; i < surveyList.size(); i++) {
+			if(surveyList.get(i).getOpinion().getOpinion() == "Yes") {
+				score++;
+			}
+		}
+		return score;
+	}
 }
