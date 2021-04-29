@@ -20,8 +20,6 @@ public class TopicSerializer extends StdSerializer<Topic> {
 	
 	public void serialize(Topic topic, JsonGenerator generator, SerializerProvider provider) throws IOException, JsonProcessingException {
 		generator.writeStartObject();
-        generator.writeFieldName("name");
-        generator.writeString(topic.name());
         generator.writeFieldName("topic");
         generator.writeString(topic.getTopic());
         generator.writeEndObject();

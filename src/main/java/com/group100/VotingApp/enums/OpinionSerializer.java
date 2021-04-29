@@ -20,8 +20,6 @@ public class OpinionSerializer extends StdSerializer<Opinion> {
 	
 	public void serialize(Opinion opinion, JsonGenerator generator, SerializerProvider provider) throws IOException, JsonProcessingException {
 		generator.writeStartObject();
-        generator.writeFieldName("name");
-        generator.writeString(opinion.name());
         generator.writeFieldName("opinion");
         generator.writeString(opinion.getOpinion());
         generator.writeEndObject();

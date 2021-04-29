@@ -1,13 +1,10 @@
 package com.group100.VotingApp.data.entity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -15,18 +12,25 @@ public class Ballot {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long ballotId;
-	@OneToOne
+	@ManyToOne
 	private User user;
-	@OneToMany
-	private List<Race> raceList = new ArrayList<Race>();
+	@OneToOne
+	private Candidate candidate;
 
 	public Ballot() {
 
 	}
 
-	public Ballot(User user, List<Race> raceList) {
-		this.user = user;
-		this.raceList = raceList;
+	public Ballot(Candidate candidate) {
+		this.candidate = candidate;
+	}
+
+	public long getBallotId() {
+		return ballotId;
+	}
+
+	public void setBallotId(long ballotId) {
+		this.ballotId = ballotId;
 	}
 
 	public User getUser() {
@@ -37,11 +41,11 @@ public class Ballot {
 		this.user = user;
 	}
 
-	public List<Race> getRaceList() {
-		return raceList;
+	public Candidate getCandidate() {
+		return candidate;
 	}
 
-	public void setRace(List<Race> raceList) {
-		this.raceList = raceList;
+	public void setCandidate(Candidate candidate) {
+		this.candidate = candidate;
 	}
 }

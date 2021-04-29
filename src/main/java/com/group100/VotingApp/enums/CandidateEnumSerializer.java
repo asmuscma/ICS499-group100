@@ -7,23 +7,22 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
-public class OfficeSerializer extends StdSerializer<Office> {
+public class CandidateEnumSerializer extends StdSerializer<CandidateEnum> {
 
 	private static final long serialVersionUID = 1L;
 
-	protected OfficeSerializer(Class<Office> t) {
+	protected CandidateEnumSerializer(Class<CandidateEnum> t) {
 		super(t);
 	}
 
 	@Override
-	public void serialize(Office office, JsonGenerator generator, SerializerProvider provider) throws IOException,  JsonProcessingException {
+	public void serialize(CandidateEnum candidateEnum, JsonGenerator generator, SerializerProvider provider) throws IOException,  JsonProcessingException {
 		generator.writeStartObject();
-        generator.writeFieldName("name");
-        generator.writeString(office.name());
         generator.writeFieldName("office");
-        generator.writeString(office.getOffice());
+        generator.writeString(candidateEnum.getOffice());
+        generator.writeFieldName("name");
+        generator.writeString(candidateEnum.getName());
         generator.writeEndObject();
-		
 	}
 
 }
