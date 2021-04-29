@@ -25,7 +25,7 @@ public class SurveyController {
 	@Autowired
 	private SurveyServiceImp surveyService;
 
-	@GetMapping("/all")
+	@GetMapping("/allSurveys")
 	public List<Survey> list() {
 		return surveyRepo.findAll();
 	}
@@ -35,7 +35,7 @@ public class SurveyController {
 		return surveyRepo.getOne(id);
 	}
 
-	@PostMapping("/add")
+	@PostMapping("/addSurveys")
 	public Survey create(@RequestBody final Survey survey) {
 		if (!surveyService.checkIfVoted(survey.getUser())) {
 			return surveyRepo.saveAndFlush(survey);
@@ -152,12 +152,12 @@ public class SurveyController {
 	public String savesurvey8(@Valid Survey survey, Model model) {
 		surveyRepo.saveAndFlush(survey);
 		model.addAttribute("survey", survey);
-		return "survey9";
+		return "survey09";
 	}
 
 	@GetMapping("/survey9")
 	public String addsurvey9(Model model) {
-		return "survey9";
+		return "survey09";
 	}
 
 	@PostMapping("/survey9")
