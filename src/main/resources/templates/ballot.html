@@ -13,7 +13,7 @@
 </head>
 <body>
 
-          <span>[[${#request.remoteUser}]]</span>
+ <span>[[${#request.remoteUser}]]</span>
           
 <div class="container">
 
@@ -23,15 +23,20 @@
 
 
 <!-- Ballot start -->
+<<<<<<< HEAD
 <form th:action="@{/ballot}" th:object="${ballot}" method= "POST">
+=======
+<form action='#' th:action="@{/ballot}" th:object="${ballot}" method= "POST">
+>>>>>>> b51ceec80dc84bf2715ca2ecc2023cf0f39bff67
 <div class="container">
     <div class="col-md-2"></div>
     <div class="col-md-8">
     
     	<!--President / Vice President -->
         <div class="panel panel-default">
-            <div class="panel-heading">President / Vice President</div>
+            <div class="panel-heading">President</div>
             <div class="panel-body">
+<<<<<<< HEAD
             
             Please select your candidates for President and Vice President.<br /><select
             name="candidate">
@@ -40,15 +45,41 @@
             th:value="${can}" th:text="${can.candidateName}"></option>
             </select> <br /> <br />
                    
+=======
+                <br />
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-default">
+                       <select name=candidate><option
+                       th:value= "${T(com.group100.VotingApp.enums.CandidateEnum).JOHN}"  th:text= "${T(com.group100.VotingApp.enums.candidateEnum).JOHN}">
+                       </option>
+                       <option
+                       th:value= "${T(com.group100.VotingApp.enums.CandidateEnum).JANE}"  th:text= "${T(com.group100.VotingApp.enums.candidateEnum).JANE}">
+                       </option>
+                       </select>
+                    </label>
+                    </div>
+>>>>>>> b51ceec80dc84bf2715ca2ecc2023cf0f39bff67
                 <br />
                 <br />
             </div>
         </div>
+<<<<<<< HEAD
         	<br />
         	<br /><input type="submit" value="Continue Ballot" />
         	</div>
         	</div>
         	</form>
+=======
+		
+    	
+			<label class="btn btn-default" style="width: 150px">
+				<input type="Submit" value="Submit"/>
+			</label>
+		</div>
+		</div>
+		</form>
+	
+>>>>>>> b51ceec80dc84bf2715ca2ecc2023cf0f39bff67
 		
     	
 		

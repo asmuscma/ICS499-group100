@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<title>Political Survey</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="font-awesome/css/font-awesome.min.css" />
+<link rel="stylesheet" type="text/css"
+	href="https://www.shieldui.com/shared/components/latest/css/light-bootstrap/all.min.css" />
+<script type="text/javascript" src="js/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+<body>
+	<span>[[${#request.remoteUser}]]</span>
+	<!--Criminal Issues -->
+	<div class="panel panel-default">
+		<div class="panel-heading">Social Issues</div>
+		<div class="panel-body">
+			<form th:action="@{/makesurvey0}" th:object="${survey}" method="POST">
+				<div class="container">
+					<div class="col-md-2"></div>
+					<div class="col-md-8">
+						<br>Should the government continue to fund Planned Parenthood?
+						<br> 
+						<select name="opinion">
+							<option
+								th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+								th:value="${op}" th:text="${op.opinion}"></option>
+						</select> <input type="hidden"
+							th:value="${T(com.group100.VotingApp.enums.Topic).SOCIAL}"
+							th:attr="name='topic'"> <br /> <br /> <input
+							type="submit" value="Continue Survey" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>
