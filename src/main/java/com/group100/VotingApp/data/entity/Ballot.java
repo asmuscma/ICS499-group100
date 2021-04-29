@@ -7,6 +7,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import com.group100.VotingApp.enums.CandidateEnum;
+
 @Entity
 public class Ballot {
 	@Id
@@ -14,15 +16,9 @@ public class Ballot {
 	private long ballotId;
 	@ManyToOne
 	private User user;
-	@OneToOne
-	private Candidate candidate;
-
+	private CandidateEnum candidate;
 	public Ballot() {
 
-	}
-
-	public Ballot(Candidate candidate) {
-		this.candidate = candidate;
 	}
 
 	public long getBallotId() {
@@ -41,11 +37,15 @@ public class Ballot {
 		this.user = user;
 	}
 
-	public Candidate getCandidate() {
+	public CandidateEnum getCandidate() {
 		return candidate;
 	}
 
-	public void setCandidate(Candidate candidate) {
+	public void setCandidate(CandidateEnum candidate) {
 		this.candidate = candidate;
 	}
+
+
+
+
 }
