@@ -36,38 +36,341 @@
 				<div class="col-md-2"></div>
 				<div class="col-md-8">
 
-					<!--Criminal Issues -->
-					<div class="panel panel-default">
-						<div class="panel-heading">Criminal
-							Issues</div>
-						<div class="panel-body">
+		<!--Criminal Issues -->
+		<div class="panel panel-default">
+			<div class="panel-heading">Criminal Issues</div>
+			<div class="panel-body">
 
-							Should funding for local police departments be redirected to
-							social and community based programs? <br /> <select
-								name="opinion">
-								<option
-									th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
-									th:value="${op}" th:text="${op.opinion}"></option>
-							</select> <br /> <br /> 
-							Should police departments be allowed to use
-							military grade equipment? <br />
-							<select name="opinion">
-									<option
-										th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
-										th:value="${op}" th:text="${op.opinion}"></option>
-								</select>
-							<br /> <br /> Should convicted criminals have the right to
-							vote? <br />
-							<select name="opinion">
-									<option
-										th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
-										th:value="${op}" th:text="${op.opinion}"></option>
-								</select>
-							<br /> <br />
-						</div>
-					</div>
-					<br /> <br /> <input type="submit" value="Continue Survey" />
+				Should funding for local police departments be redirected to
+				social and community based programs? <br /> <select
+					name="opinion">
+					<option
+						th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+						th:value="${op}" th:text="${op.opinion}"></option>
+				</select> <br /> <br /> 
+				Should police departments be allowed to use
+				military grade equipment? <br />
+				<select name="opinion">
+						<option
+							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+							th:value="${op}" th:text="${op.opinion}"></option>
+					</select>
+				<br /> <br /> Should convicted criminals have the right to
+				vote? <br />
+				<select name="opinion">
+						<option
+							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+							th:value="${op}" th:text="${op.opinion}"></option>
+					</select>
+				<br /> <br />
+			</div>
+		</div>
 
+		<!--Education Issues-->
+		<div class="panel panel-default">
+			<div class="panel-heading">Education Issues</div>
+			<div class="panel-body">
+				Do you support increasing taxes for the rich in order to reduce
+				interest rates for student loans? <br />
+				<div class="btn-group" data-toggle="buttons">
+					<select name="opinion">
+						<option
+							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+							th:value="${op}" th:text="${op.opinion}"></option>
+					</select>
+				</div>
+				<br /> <br /> Should the federal government pay for tuition at
+				four-year colleges and universities? <br />
+				<select name="opinion">
+						<option
+							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+							th:value="${op}" th:text="${op.opinion}"></option>
+					</select>
+				<br /> <br /> Should critical race theory be taught in K-12
+				education? <br />
+				<select name="opinion">
+						<option
+							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+							th:value="${op}" th:text="${op.opinion}"></option>
+					</select>
+				</div>
+				<br /> <br />
+			</div>
+			
+		<!--Enviormental Issues-->
+		<div class="panel panel-default">
+			<div class="panel-heading" th:field="*{topic}" id="environmental">Enviormental Issues</div>
+			<div class="panel-body">
+				Should the government increase environmental regulations to prevent climate change?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}"value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+
+				Should the federal government pay for tuition at four-year colleges and universities?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
+					</label>
+					
+				</div>
+				<br />
+				<br />
+				
+				Should the federal government fund Universal preschool?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
+					</label>
+					
+				</div>
+				<br />
+				<br />
+			</div>
+		</div>
+		
+		<!--Electoral Issues-->
+		<div class="panel panel-default">
+			<div class="panel-heading" th:field="*{topic}" id="electoral">Electoral Issues</div>
+			<div class="panel-body">
+				Should the electoral college be abolished?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+
+				Should foreigners, currently residing in the United States, have the right to vote?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}"value="Conservative" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+				
+				Should a photo ID be required to vote?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+			</div>
+		</div>
+		
+		<!--Domestic Policy Issues-->
+		<div class="panel panel-default">
+			<div class="panel-heading" th:field="*{topic}" id="Domestic Policy">Domestic Policy Issues</div>
+			<div class="panel-body">
+				Should there be more restrictions on the current process of purchasing a gun?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative"/> No
+					</label>
+				</div>
+				<br />
+				<br />
+
+				Should teachers be allowed to carry guns at school?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
+					</label>
+				</div>
+				<br />
+				<br />
+				
+				Should it be illegal to burn the American flag?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal"/> No
+					</label>
+				</div>
+				<br />
+				<br />
+			</div>
+		</div>
+
+		<!--Foreign Policy Issues-->
+		<div class="panel panel-default">
+			<div class="panel-heading" th:field="*{topic}" id="Foreign Policy">Foreign Policy Issues</div>
+			<div class="panel-body">
+				Should the government increase military spending?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+
+				Should the U.S. accept refugees from Syria?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservate" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+				
+				Should the military be allowed to use enhanced interrogation techniques, such as waterboarding, to gain information from suspected terrorists?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+			</div>
+		</div>
+		
+		<!--Social Issues-->
+		<div class="panel panel-default">
+			<div class="panel-heading" th:field="*{topic}" id="Social">Social Issues</div>
+			<div class="panel-body">
+				Should the government continue to fund Planned Parenthood?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+
+				Should abortion be outlawed?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> No
+					</label>
+				<br />
+				<br />
+				
+				Should a business be able to deny service to a customer if the request conflicts with the owner’s religious beliefs?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+			</div>
+		</div>
+		</div>
+
+		<!--Healthcare Issues-->
+		<div class="panel panel-default">
+			<div class="panel-heading" th:field="*{topic}" id="Healthcare">Healthcare Issues</div>
+			<div class="panel-body">
+				Should the federal government increase funding of health care for low income individuals (Medicaid)?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input  type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
+					</label>
+					
+				</div>
+				<br />
+				<br />
+
+				Should the government help fund the World Health Organization?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> No
+					</label>
+					
+				</div>
+				<br />
+				<br />	
+				Should people be required to work in order to receive Medicaid?
+				<br />
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Conservative" th:errorclass="error" /> Yes
+					</label>
+					<label class="btn btn-default" style="width: 70px">
+						<input type="radio" autocomplete="off" th:field="*{opinion}" value="Liberal" th:errorclass="error" /> No
+					</label>
+				</div>
+				<br />
+				<br />
+			</div>
+		</div>
+				<br />
+				<br /> <input type="submit" value="Continue Survey" />
 				</div>
 			</div>
 		</form>
