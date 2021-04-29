@@ -47,7 +47,8 @@
 					<option
 						th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 						th:value="${op}" th:text="${op.opinion}"></option>
-				</select> <br /> <br /> 
+				</select> <br /> <br />
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).CRIMINAL}"> 
 				Should police departments be allowed to use
 				military grade equipment? <br />
 				<select name="opinion">
@@ -55,6 +56,7 @@
 							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 							th:value="${op}" th:text="${op.opinion}"></option>
 					</select>
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).CRIMINAL}"> 
 				<br /> <br /> Should convicted criminals have the right to
 				vote? <br />
 				<select name="opinion">
@@ -62,6 +64,7 @@
 							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 							th:value="${op}" th:text="${op.opinion}"></option>
 					</select>
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).CRIMINAL}"> 
 				<br /> <br />
 			</div>
 		</div>
@@ -78,6 +81,7 @@
 							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 							th:value="${op}" th:text="${op.opinion}"></option>
 					</select>
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}"> 
 				</div>
 				<br /> <br /> Should the federal government pay for tuition at
 				four-year colleges and universities? <br />
@@ -86,6 +90,7 @@
 							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 							th:value="${op}" th:text="${op.opinion}"></option>
 					</select>
+						<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}"> 
 				<br /> <br /> Should critical race theory be taught in K-12
 				education? <br />
 				<select name="opinion">
@@ -94,6 +99,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}"> 
 				</div>
 				<br /> <br />
 			</div>
@@ -110,6 +116,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVRIONMENTAL}"> 
 				<br />
 				<br />
 
@@ -121,6 +128,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVRIONMENTAL}"> 
 				<br />
 				<br />
 				
@@ -132,6 +140,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVRIONMENTAL}"> 
 				<br />
 				<br />
 			</div>
@@ -149,6 +158,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ELECTORAL}"> 
 				<br />
 				<br />
 
@@ -160,6 +170,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ELECTORAL}"> 
 				<br />
 				<br />
 				
@@ -171,6 +182,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ELECTORAL}"> 
 				<br />
 				<br />
 			</div>
@@ -188,6 +200,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).DOMESTIC}"> 
 				<br />
 				<br />
 
@@ -199,6 +212,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).DOMESTIC}"> 
 				<br />
 				<br />
 				
@@ -210,6 +224,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).DOMESTIC}"> 
 				<br />
 				<br />
 			</div>
@@ -227,6 +242,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).FOREIGN}"> 
 				<br />
 				<br />
 
@@ -238,6 +254,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).FOREIGN}"> 
 				<br />
 				<br />
 				
@@ -249,6 +266,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).FOREIGN}"> 
 				<br />
 				<br />
 			</div>
@@ -266,6 +284,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).SOCIAL}"> 
 				<br />
 				<br />
 
@@ -277,6 +296,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).SOCIAL}"> 
 				<br />
 				<br />
 				
@@ -288,6 +308,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).SOCIAL}"> 
 				<br />
 				<br />
 		</div>
@@ -305,6 +326,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).HEALTH}"> 
 				<br />
 				<br />
 
@@ -316,6 +338,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).HEALTH}"> 
 				<br />
 				<br />	
 				Should people be required to work in order to receive Medicaid?
@@ -326,6 +349,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).HEALTH}"> 
 				<br />
 				<br />
 			</div>

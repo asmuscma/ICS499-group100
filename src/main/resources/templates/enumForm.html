@@ -9,9 +9,14 @@
   <br>
 <form th:action="@{/widget/add}" method="post" th:object="${widget}">
 <p>	Should funding for local police departments be redirected to social and community based programs?</p>
-<select name="opinion">
-<option th:each= "op : ${T(com.group100.VotingApp.data.entity.Opinion).values()}"   th:value="${op}" th:text="${op.displayValue}"></option>
-</select>
+<select
+								name="opinion">
+								<option
+									th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
+									th:value="${op}" th:text="${op.opinion}"></option>
+							</select>
+<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}" th:text="${T(com.group100.VotingApp.enums.Topic).EDUCATION}">
+
 <br>
   <input type="submit" value="Submit" />
 </form>

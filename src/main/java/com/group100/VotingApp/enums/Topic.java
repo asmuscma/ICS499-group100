@@ -7,7 +7,11 @@ public enum Topic {
 	EDUCATION("Education"),
 	CRIMINAL("Criminal"),
 	FOREIGN("Foreign"),
-	DOMESTIC("Domestic");
+	DOMESTIC("Domestic"),
+	HEALTH("Health"),
+	SOCIAL("Social"),
+	ELECTORAL("Electoral");
+	
 	
 	private String topic;
 	

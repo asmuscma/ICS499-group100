@@ -5,9 +5,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
-import com.group100.VotingApp.enums.Opinion;
 import com.group100.VotingApp.enums.Topic;
+import com.group100.VotingApp.enums.Opinion;
+
 
 /**
  * An object that represents a political issue which different users,
