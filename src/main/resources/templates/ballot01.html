@@ -35,7 +35,7 @@
             <div class="panel-body">
             
             Please select your candidates for Governor.<br /><select
-            name="candidateName">
+            name="govName">
             <option
             th:each="can : ${T(com.group100.VotingApp.enums.GovNames).values()}"
             th:value="${can}" th:text="${can.name}"></option>

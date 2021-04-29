@@ -35,7 +35,7 @@
             <div class="panel-body">
             
             Please select your candidates for Senator.<br /><select
-            name="candidateName">
+            name="senName2">
             <option
             th:each="can : ${T(com.group100.VotingApp.enums.SenatorCandNames2).values()}"
             th:value="${can}" th:text="${can.name}"></option>

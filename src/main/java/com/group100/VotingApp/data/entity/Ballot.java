@@ -10,6 +10,9 @@ import javax.persistence.ManyToOne;
 
 import com.group100.VotingApp.enums.CandidateName;
 import com.group100.VotingApp.enums.CandidateOffice;
+import com.group100.VotingApp.enums.GovNames;
+import com.group100.VotingApp.enums.SenatorCandNames;
+import com.group100.VotingApp.enums.SenatorCandNames2;
 
 @Entity
 public class Ballot {
@@ -21,6 +24,12 @@ public class Ballot {
 
 	@Enumerated(EnumType.STRING)
 	private CandidateName candidateName;
+	@Enumerated(EnumType.STRING)
+	private GovNames govName;
+	@Enumerated(EnumType.STRING)
+	private SenatorCandNames senName1;
+	@Enumerated(EnumType.STRING)
+	private SenatorCandNames2 senName2;
 	@Enumerated(EnumType.STRING)
 	private CandidateOffice candidateOffice;
 
@@ -50,6 +59,30 @@ public class Ballot {
 
 	public void setCandidateName(CandidateName candidateName) {
 		this.candidateName = candidateName;
+	}
+
+	public GovNames getGovName() {
+		return govName;
+	}
+
+	public void setGovName(GovNames govName) {
+		this.govName = govName;
+	}
+
+	public SenatorCandNames getSen1Name() {
+		return senName1;
+	}
+
+	public void setSen1Name(SenatorCandNames senName1) {
+		this.senName1 = senName1;
+	}
+
+	public SenatorCandNames2 getSen2Name() {
+		return senName2;
+	}
+
+	public void setSen2Name(SenatorCandNames2 senName2) {
+		this.senName2 = senName2;
 	}
 
 	public CandidateOffice getCandidateOffice() {
