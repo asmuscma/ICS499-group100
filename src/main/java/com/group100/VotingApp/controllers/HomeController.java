@@ -37,10 +37,8 @@ public class HomeController {
 	} */
 	
 	@RequestMapping("/ballot")
-	public ModelAndView ballot() {
-		ModelAndView model = new ModelAndView();
-		model.setViewName("ballot");
-		return model;
+	public String ballot() {
+		return "ballot";
 	}
 	@RequestMapping("/survey0")
 	public String survey0() {

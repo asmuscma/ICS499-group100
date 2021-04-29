@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.group100.VotingApp.data.entity.Ballot;
+import com.group100.VotingApp.data.entity.BallotCreationDto;
 import com.group100.VotingApp.data.repository.BallotRepository;
 import com.group100.VotingApp.serviceImp.BallotServiceImp;
 
@@ -25,7 +27,7 @@ public class BallotController {
 	private BallotRepository ballotRepo;
 	
 	@Autowired
-	private BallotServiceImp ballotServiceImp;
+	private BallotServiceImp ballotService;
 
 	@GetMapping("/all")
 	public List<Ballot> list() {
@@ -39,21 +41,28 @@ public class BallotController {
 
 	@PostMapping("/add")
 	public Ballot create(@RequestBody final Ballot ballot) {
-		if(!ballotServiceImp.checkIfVoted(ballot.getUser().getUsername())) {
+		if(!ballotService.checkIfVoted(ballot.getUser().getUsername())) {
 			return ballotRepo.saveAndFlush(ballot);
 		}
 		return null;
 	}
 	
 	@GetMapping("/ballot")
-	public String ballot() {
+	public String ballot(Model model) {
+		BallotCreationDto ballotsForm = new BallotCreationDto();
+		
+		//TODO: set the range to number of ballot questions
+		for(int i = 0; i <= 3; i++) {
+			ballotsForm.addBallot(new Ballot());
+		}
+		model.addAttribute("form", ballotsForm);
 		return "ballot";
 	}
 	
 	@PostMapping("/sendballot")
-	public String sendballot(@Valid Ballot ballot, Model model) {
-		ballotRepo.saveAndFlush(ballot);
-		model.addAttribute(ballot);
-		return "sendballot";
+	public String sendballot(@Valid @ModelAttribute BallotCreationDto form, Model model) {
+		ballotService.saveAll(form.getBallots());
+		model.addAttribute("ballots", ballotService.findAll());
+		return "BallotResults";
 	}
 }
