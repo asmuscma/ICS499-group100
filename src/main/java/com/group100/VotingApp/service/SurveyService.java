@@ -10,4 +10,5 @@ public interface SurveyService {
 	void submitSurvey(Survey survey);
 	public List<Survey> saveAll(List<Survey> surveyList);
 	public List<Survey> findAll();
+	public long getTopicScore(User user, String topic);
 }
