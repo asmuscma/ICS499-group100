@@ -4,10 +4,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import com.group100.VotingApp.enums.Topic;
-import com.group100.VotingApp.enums.Opinion;
+import javax.persistence.OneToOne;
 
+import com.group100.VotingApp.enums.Opinion;
+import com.group100.VotingApp.enums.Topic;
 
 /**
  * An object that represents a political issue which different users,
@@ -18,10 +18,9 @@ public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String issueId;
-	@ManyToOne
+	@OneToOne
 	private User user;
-	@ManyToOne
-	private Survey survey;
+
 	private Topic topic;
 	private Opinion opinion;
 
@@ -49,7 +48,7 @@ public class Issue {
 	public void setTopic(Topic topic) {
 		this.topic = topic;
 	}
-	
+
 	public String getIssueId() {
 		return issueId;
 	}
@@ -58,11 +57,11 @@ public class Issue {
 		this.issueId = issueId;
 	}
 
-	public Survey getSurvey() {
-		return survey;
+	public User getUser() {
+		return this.user;
 	}
 
-	public void setSurvey(Survey survey) {
-		this.survey = survey;
+	public void setUser(User user) {
+		this.user = user;
 	}
 }
