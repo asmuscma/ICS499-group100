@@ -23,7 +23,7 @@
 
 
 <!-- Ballot start -->
-<form action='#' th:action="@{/makeballot00}" th:object="${ballot}" method= "POST">
+<form action='#' th:action="@{/makeballot01}" th:object="${ballot}" method= "POST">
 <div class="container">
 
     <div class="col-md-2"></div>
@@ -31,16 +31,16 @@
     
     	<!--President / Vice President -->
         <div class="panel panel-default">
-            <div class="panel-heading">President</div>
+            <div class="panel-heading">Governor</div>
             <div class="panel-body">
             
-            Please select your candidates for President and Vice President.<br /><select
-            name="candidate">
+            Please select your candidates for Governor.<br /><select
+            name="candidateName">
             <option
-            th:each="can : ${T(com.group100.VotingApp.enums.CandidateName).values()}"
+            th:each="can : ${T(com.group100.VotingApp.enums.GovNames).values()}"
             th:value="${can}" th:text="${can.name}"></option>
             </select> <br /> <br />
-            <input type="hidden" th:value="${T(com.group100.VotingApp.enums.CandidateOffice).PRESIDENT}" th:attr="name='office'">
+            <input type="hidden" th:value="${T(com.group100.VotingApp.enums.CandidateOffice).GOVERNOR}" th:attr="name='candidateOffice'">
              </div>      
                
 </div>

@@ -19,7 +19,6 @@ public class Ballot {
 	@ManyToOne
 	private User user;
 
-	private String office;
 	@Enumerated(EnumType.STRING)
 	private CandidateName candidateName;
 	@Enumerated(EnumType.STRING)
@@ -53,12 +52,12 @@ public class Ballot {
 		this.candidateName = candidateName;
 	}
 
-	public String getCandidateOffice() {
-		return office;
+	public CandidateOffice getCandidateOffice() {
+		return candidateOffice;
 	}
 
-	public void setCandidateOffice(String candidateOffice) {
-		this.office = candidateOffice;
+	public void setCandidateOffice(CandidateOffice candidateOffice) {
+		this.candidateOffice = candidateOffice;
 	}
 
 }

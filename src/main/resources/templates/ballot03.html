@@ -23,7 +23,7 @@
 
 
 <!-- Ballot start -->
-<form action='#' th:action="@{/makeballot00}" th:object="${ballot}" method= "POST">
+<form th:action="@{/makeballot03}" th:object="${ballot}" method= "POST">
 <div class="container">
 
     <div class="col-md-2"></div>
@@ -31,21 +31,21 @@
     
     	<!--President / Vice President -->
         <div class="panel panel-default">
-            <div class="panel-heading">President</div>
+            <div class="panel-heading">Senator</div>
             <div class="panel-body">
             
-            Please select your candidates for President and Vice President.<br /><select
-            name="candidate">
+            Please select your candidates for Senator.<br /><select
+            name="candidateName">
             <option
-            th:each="can : ${T(com.group100.VotingApp.enums.CandidateName).values()}"
+            th:each="can : ${T(com.group100.VotingApp.enums.SenatorCandNames2).values()}"
             th:value="${can}" th:text="${can.name}"></option>
             </select> <br /> <br />
-            <input type="hidden" th:value="${T(com.group100.VotingApp.enums.CandidateOffice).PRESIDENT}" th:attr="name='office'">
+            <input type="hidden" th:value="${T(com.group100.VotingApp.enums.CandidateOffice).SENATOR}" th:attr="name='candidateOffice'">
              </div>      
                
 </div>
         	<br />
-        	<br /><input type="submit" value="Continue Ballot" />
+        	<br /><input type="submit" value="See Results" />
         	</div>
         	</div>
         	</form>
@@ -54,108 +54,6 @@
 		
 <!-- you need to include the shieldui css and js assets in order for the components to work --><script type="text/javascript" src="https://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js"></script>
 
-<script type="text/javascript">
-    jQuery(function ($) {
-        $('#rate1').shieldRating({
-            max: 7,
-            step: 0.1,
-            value: 0,
-            markPreset: false
-        });
-
-        $('#rate2').shieldRating({
-            max: 7,
-            step: 0.1,
-            value: 0,
-            markPreset: false
-        });
-
-        $('#rate3').shieldRating({
-            max: 7,
-            step: 0.1,
-            value: 0,
-            markPreset: false
-        });
-
-        var progress1 = $("#progress1").shieldProgressBar({
-            value: 50,
-            text: {
-                enabled: true,
-                template: "{0} %"
-            }
-        }).swidget();
-
-        var progress2 = $("#progress2").shieldProgressBar({
-            value: 50,
-            text: {
-                enabled: true,
-                template: "{0} %"
-            }
-        }).swidget();
-
-        var progress3 = $("#progress3").shieldProgressBar({
-            value: 50,
-            text: {
-                enabled: true,
-                template: "{0} %"
-            }
-        }).swidget();
-
-
-        $("#increase1").shieldButton({
-            events: {
-                click: function () {
-                    progress1.value(progress1.value() + 10);
-                }
-            }
-        });
-        $("#decrease1").shieldButton({
-            events: {
-                click: function () {
-                    progress1.value(progress1.value() - 10);
-                }
-            }
-        });
-
-        $("#increase2").shieldButton({
-            events: {
-                click: function () {
-                    progress2.value(progress2.value() + 10);
-                }
-            }
-        });
-        $("#decrease2").shieldButton({
-            events: {
-                click: function () {
-                    progress2.value(progress2.value() - 10);
-                }
-            }
-        });
-
-        $("#increase3").shieldButton({
-            events: {
-                click: function () {
-                    progress3.value(progress3.value() + 10);
-                }
-            }
-        });
-        $("#decrease3").shieldButton({
-            events: {
-                click: function () {
-                    progress3.value(progress3.value() - 10);
-                }
-            }
-        });
-    });
-</script>
-
-<style>
-    .slider {
-        width: 100%;
-    }
-</style>
-
-<!-- Survey - END -->
 
 </div>
 

@@ -35,7 +35,7 @@ public class BallotController {
 		return ballotRepo.getOne(id);
 	}
 
-	@PostMapping("/addBallot")
+	@PostMapping("/addBallots")
 	public Ballot create(@RequestBody final Ballot ballot) {
 		if (!ballotService.checkIfVoted(ballot.getUser().getUsername())) {
 			return ballotRepo.saveAndFlush(ballot);
@@ -49,7 +49,7 @@ public class BallotController {
 	}
 
 	@PostMapping("/makeballot00")
-	public String sendballot00(@Valid Ballot ballot, Model model) {
+	public String saveballot00(@Valid Ballot ballot, Model model) {
 		ballotRepo.saveAndFlush(ballot);
 		model.addAttribute("ballot", ballot);
 		return "ballot01";
@@ -61,7 +61,7 @@ public class BallotController {
 	}
 
 	@PostMapping("/makeballot01")
-	public String sendballot01(@Valid Ballot ballot, Model model) {
+	public String saveballot01(@Valid Ballot ballot, Model model) {
 		ballotRepo.saveAndFlush(ballot);
 		model.addAttribute("ballot", ballot);
 		return "ballot02";
@@ -72,20 +72,20 @@ public class BallotController {
 		return "ballot02";
 	}
 
-	@PostMapping("/makeballot03")
-	public String sendballot03(@Valid Ballot ballot, Model model) {
+	@PostMapping("/makeballot02")
+	public String saveballot02(@Valid Ballot ballot, Model model) {
 		ballotRepo.saveAndFlush(ballot);
 		model.addAttribute("ballot", ballot);
-		return "ballot04";
+		return "ballot03";
 	}
 
-	@GetMapping("/makeballot04")
-	public String ballot04(Model model) {
-		return "ballot04";
+	@GetMapping("/makeballot03")
+	public String ballot03(Model model) {
+		return "ballot03";
 	}
 
-	@PostMapping("/makeballot04")
-	public String sendballot04(@Valid Ballot ballot, Model model) {
+	@PostMapping("/makeballot03")
+	public String saveballot03(@Valid Ballot ballot, Model model) {
 		ballotRepo.saveAndFlush(ballot);
 		model.addAttribute("ballot", ballot);
 		return "BallotResults";
