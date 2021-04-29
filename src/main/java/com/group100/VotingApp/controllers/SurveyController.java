@@ -57,18 +57,9 @@ public class SurveyController {
 	public String savesurvey0(@Valid Survey survey, Model model) {
 		surveyRepo.saveAndFlush(survey);
 		model.addAttribute("survey", survey);
-		return "results";
+		return "result";
 	}
 
-	@GetMapping("/makesurvey1")
-	public String addsurvey1(@ModelAttribute Survey survey) {
-		return "survey1";
-	}
-
-	@PostMapping("/makesurvey1")
-	public String savesurvey1(@Valid Survey survey, Model model) {
-		model.addAttribute("survey", survey);
-		return "survey2";
-	}
+	
 
 }

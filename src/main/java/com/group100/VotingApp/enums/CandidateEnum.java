@@ -20,12 +20,10 @@ public enum CandidateEnum {
 	public void setOffice(String office) {
 		this.office = office;
 	}
-
+	
 	public String getName() {
 		return name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
+	
 }

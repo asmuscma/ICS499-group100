@@ -1,6 +1,8 @@
 package com.group100.VotingApp.enums;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 
 public enum Topic {
 	ENVIRONMENT("Environment"),
@@ -12,7 +14,7 @@ public enum Topic {
 	SOCIAL("Social"),
 	ELECTORAL("Electoral");
 	
-	
+	@JsonProperty
 	private String topic;
 	
 	private Topic(String topic) {

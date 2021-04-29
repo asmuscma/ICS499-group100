@@ -51,7 +51,10 @@ public class HomeController {
 	public String survey1() {
 		return "survey1";
 	}
-	
+	@RequestMapping("/result")
+	public String result() {
+		return "result";
+	}
 	@RequestMapping("/enumForm")
 	public String enumForm() {
 		return "enumForm";

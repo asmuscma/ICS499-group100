@@ -48,7 +48,7 @@
 						th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 						th:value="${op}" th:text="${op.opinion}"></option>
 				</select> <br /> <br />
-				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).CRIMINAL}"> 
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).CRIMINAL}" th:attr="name='topic'"> 
 				Should police departments be allowed to use
 				military grade equipment? <br />
 				<select name="opinion">
@@ -56,7 +56,7 @@
 							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 							th:value="${op}" th:text="${op.opinion}"></option>
 					</select>
-					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).CRIMINAL}"> 
+					<input type="hidden" th:value="${T(com.group100.VotingApp.enums.Topic).CRIMINAL}" th:attr="name='topic'"> 
 				<br /> <br /> Should convicted criminals have the right to
 				vote? <br />
 				<select name="opinion">
@@ -64,7 +64,7 @@
 							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 							th:value="${op}" th:text="${op.opinion}"></option>
 					</select>
-					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).CRIMINAL}"> 
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).CRIMINAL}" th:attr="name='topic'"> 
 				<br /> <br />
 			</div>
 		</div>
@@ -81,7 +81,7 @@
 							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 							th:value="${op}" th:text="${op.opinion}"></option>
 					</select>
-					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}"> 
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}" th:attr="name='topic'"> 
 				</div>
 				<br /> <br /> Should the federal government pay for tuition at
 				four-year colleges and universities? <br />
@@ -90,7 +90,7 @@
 							th:each="op : ${T(com.group100.VotingApp.enums.Opinion).values()}"
 							th:value="${op}" th:text="${op.opinion}"></option>
 					</select>
-						<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}"> 
+						<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}" th:attr="name='topic'"> 
 				<br /> <br /> Should critical race theory be taught in K-12
 				education? <br />
 				<select name="opinion">
@@ -99,7 +99,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
-					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}"> 
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).EDUCATION}" th:attr="name='topic'"> 
 				</div>
 				<br /> <br />
 			</div>
@@ -116,7 +116,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
-					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVIRONMENT}"> 
+					<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVIRONMENT}" th:attr="name='topic'"> 
 				<br />
 				<br />
 
@@ -128,7 +128,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
-				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVIRONMENT}"> 
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVIRONMENT}" th:attr="name='topic'"> 
 				<br />
 				<br />
 				
@@ -140,7 +140,7 @@
 						th:value="${op}" th:text="${op.opinion}">
 					</option>
 				</select>
-				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVIRONMENT}"> 
+				<input type="hidden" th:value= "${T(com.group100.VotingApp.enums.Topic).ENVIRONMENT}" th:attr="name='topic'"> 
 				<br />
 				<br />
 			</div>

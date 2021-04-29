@@ -1,6 +1,8 @@
 package com.group100.VotingApp.data.entity;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,8 +22,10 @@ public class Survey {
 	private long issueId;
 	@OneToOne
 	private User user;
-
+	
+	@Enumerated(EnumType.STRING)
 	private Topic topic;
+	@Enumerated(EnumType.STRING)
 	private Opinion opinion;
 
 	public Survey() {
