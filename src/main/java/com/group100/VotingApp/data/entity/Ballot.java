@@ -69,19 +69,19 @@ public class Ballot {
 		this.govName = govName;
 	}
 
-	public SenatorCandNames getSen1Name() {
+	public SenatorCandNames getSenName1() {
 		return senName1;
 	}
 
-	public void setSen1Name(SenatorCandNames senName1) {
+	public void setSenName1(SenatorCandNames senName1) {
 		this.senName1 = senName1;
 	}
 
-	public SenatorCandNames2 getSen2Name() {
+	public SenatorCandNames2 getSenName2() {
 		return senName2;
 	}
 
-	public void setSen2Name(SenatorCandNames2 senName2) {
+	public void setSenName2(SenatorCandNames2 senName2) {
 		this.senName2 = senName2;
 	}
 

@@ -13,10 +13,6 @@ public enum GovNames {
 		this.name = name;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	@JsonValue
 	public String getName() {
 		return name;
