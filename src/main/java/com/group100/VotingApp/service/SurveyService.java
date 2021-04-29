@@ -1,10 +1,10 @@
 package com.group100.VotingApp.service;
 
-import com.group100.VotingApp.data.entity.Issue;
+import com.group100.VotingApp.data.entity.Survey;
 import com.group100.VotingApp.data.entity.User;
 
-public interface IssueService {
+public interface SurveyService {
 	boolean checkIfVoted(User user);
 
-	void submitSurvey(Issue iss);
+	void submitSurvey(Survey survey);
 }
