@@ -5,7 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 import com.group100.VotingApp.enums.CandidateEnum;
 
@@ -17,6 +16,8 @@ public class Ballot {
 	@ManyToOne
 	private User user;
 	private CandidateEnum candidate;
+	
+	
 	public Ballot() {
 
 	}
