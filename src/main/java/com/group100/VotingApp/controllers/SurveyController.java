@@ -64,8 +64,8 @@ public class SurveyController {
 	public String savesurvey0(@Valid @ModelAttribute SurveyCreationDto form, Model model) {
 		/*surveyRepo.saveAndFlush(survey);
 		model.addAttribute("survey", survey);*/
-		surveyRepo.saveAll(form.getSurveys());
-		model.addAttribute("surveys", surveyRepo.findAll());
+		surveyService.saveAll(form.getSurveys());
+		model.addAttribute("surveys", surveyService.findAll());
 		return "result";
 	}
 }
