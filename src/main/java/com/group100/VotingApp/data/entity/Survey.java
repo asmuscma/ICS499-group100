@@ -17,7 +17,7 @@ import com.group100.VotingApp.enums.Topic;
 public class Survey {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String issueId;
+	private long issueId;
 	@OneToOne
 	private User user;
 
@@ -49,11 +49,11 @@ public class Survey {
 		this.topic = topic;
 	}
 
-	public String getSurveyId() {
+	public long getSurveyId() {
 		return issueId;
 	}
 
-	public void setSurveyId(String issueId) {
+	public void setSurveyId(long issueId) {
 		this.issueId = issueId;
 	}
 
